@@ -48,3 +48,15 @@
    border: 2px solid black;
    height: 500px;
  }
+
+ .video {
+   border: 2px dotted pink;
+   height: 100px;
+   width: 100%;
+   display: table-cell;
+   vertical-align: middle;
+ }
+
+ .video-description p {
+   font-size: 12px;
+ }

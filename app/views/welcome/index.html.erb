@@ -1,11 +1,42 @@
 <%= render 'partials/search' %>
-<section class="videos col md-col-8">
+<body>
+  <section class="videos col md-col-8">
+    <div class="video video1 col md-col-3">
+      <img class="thumbnail" src="http://doughnutkitten.com/PNGs/live/1-Doughnut-Kitten-by-Tania-Hennessy.png" alt="kitten in a doughnut">
+    </div>
 
-  <h1>Videos!</h1>
+    <div class="video-description col md-col-9">
+      <a href="/title">Title</a>
+      <p>Description</p>
+    </div>
+  </section>
 
-</section>
+  <aside class="categories col md-col-4">
+    <h1>Filters:</h1>
+    <hr>
+    <div class="experience filter">
+      <h3>Experience Level:</h3>
+      <hr>
+      <input type="checkbox" name="filter" value="new"> Brand new<br>
+      <input type="checkbox" name="filter" value="experienced"> Experienced<br>
+      <input type="checkbox" name="filter" value="current-student"> Current Student<br>
+    </div>
 
-<aside class="categories col md-col-4">
-  
+    <div class="stack filter">
+      <h3>Stack:</h3>
+      <hr>
+      <input type="checkbox" name="filter" value="frontend"> Frontend<br>
+      <input type="checkbox" name="filter" value="backend"> Backend<br>
+    </div>
 
-</aside>
+    <div class="technologies filter">
+      <h3>Technologies:</h3>
+      <hr>
+      <input type="checkbox" name="filter" value="ruby"> Ruby<br>
+      <input type="checkbox" name="filter" value="rails"> Rails<br>
+      <input type="checkbox" name="filter" value="javascript"> Javascript<br>
+      <input type="checkbox" name="filter" value="html"> HTML<br>
+      <input type="checkbox" name="filter" value="css"> CSS<br>
+    </div>
+  </aside>
+</body>
