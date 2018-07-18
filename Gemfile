@@ -21,6 +21,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'yt', '~> 0.29.1'
+gem 'google-api-client'
 gem 'faraday'
 gem 'figaro'
 gem 'factory_bot_rails'
