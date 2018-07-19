@@ -52,15 +52,12 @@
  }
 
  .videos {
-   border: 2px solid black;
    height: 1000px;
  }
 
  .video {
-   border: 2px dotted pink;
    height: 190px;
-   display: table-cell;
-   vertical-align: middle;
+   width: 1000px;
  }
 
  .video-description p {

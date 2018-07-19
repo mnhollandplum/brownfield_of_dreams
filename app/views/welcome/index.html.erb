@@ -3,13 +3,14 @@
   <section class="videos col md-col-8">
     <% @videos.each do |video| %>
 
-    <div class="video col md-col-3">
-      <img class="thumbnail" src= <%= "#{video.thumbnail}" %> alt="kitten in a doughnut">
-    </div>
+    <div class="video">
+      <img class="thumbnail col md-col-3" src= <%= "#{video.thumbnail}" %> alt="kitten in a doughnut">
+
 
     <div class="video-description col md-col-9">
       <a class="title" href="/title"> <%= video.title %> </a>
       <p class="description"><%= video.description %></p>
+    </div>
     </div>
     <% end %>
   </section>
