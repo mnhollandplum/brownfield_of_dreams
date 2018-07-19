@@ -8,7 +8,7 @@ class VideoService
   private
 
     def response
-      Faraday.get("https://www.googleapis.com/youtube/v3/playlistItems?key=#{ENV['YOUTUBE_API_KEY']}&part=snippet&playlistId=UUwWA2R0g0x3UdEFSIKSDOmw")
+      Faraday.get("https://www.googleapis.com/youtube/v3/playlistItems?key=#{ENV['YOUTUBE_API_KEY']}&part=snippet&playlistId=UUwWA2R0g0x3UdEFSIKSDOmw&maxResults=50")
     end
 
     def data

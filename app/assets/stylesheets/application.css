@@ -8,6 +8,12 @@
    height: 65px;
    width: 65px;
  }
+
+ .thumbnail {
+   padding: 5px;
+   height: 180px;
+   width: 200px;
+ }
  .turing-logo {
    height: 65px;
  }
@@ -40,23 +46,29 @@
  }
 
  .categories {
+   padding-left: 10px;
    border: 2px solid black;
-   height: 500px;
+   height: 550px;
  }
 
  .videos {
    border: 2px solid black;
-   height: 500px;
+   height: 220px;
+   width: auto;
  }
 
  .video {
    border: 2px dotted pink;
-   height: 100px;
-   width: 100%;
+   height: 190px;
    display: table-cell;
    vertical-align: middle;
  }
 
  .video-description p {
    font-size: 12px;
+ }
+
+ .video-description {
+   height: 190px;
+   width: auto;
  }

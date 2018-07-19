@@ -1,8 +1,9 @@
 <%= render 'partials/search' %>
 <body>
-  <% @videos.each do |video| %>
   <section class="videos col md-col-8">
-    <div class="video video1 col md-col-3">
+    <% @videos.each do |video| %>
+
+    <div class="video col md-col-3">
       <img class="thumbnail" src= <%= "#{video.thumbnail}" %> alt="kitten in a doughnut">
     </div>
 
@@ -10,8 +11,8 @@
       <a class="title" href="/title"> <%= video.title %> </a>
       <p class="description"><%= video.description %></p>
     </div>
+    <% end %>
   </section>
-  <% end %>
 
   <aside class="categories col md-col-4">
     <h1>Filters:</h1>
