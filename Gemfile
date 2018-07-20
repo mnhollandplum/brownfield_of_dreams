@@ -27,6 +27,7 @@ gem 'figaro'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'active_model_serializers'
+gem 'omniauth-google-oauth2'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
