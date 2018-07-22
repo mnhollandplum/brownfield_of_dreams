@@ -20,6 +20,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 
+gem 'bcrypt', '~> 3.1.7'
+
 gem 'yt', '~> 0.29.1'
 gem 'google-api-client'
 gem 'faraday'
@@ -28,6 +30,7 @@ gem 'factory_bot_rails'
 gem 'faker'
 gem 'active_model_serializers'
 gem 'omniauth-google-oauth2'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -37,7 +40,6 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'launchy'
-  gem 'simplecov'
   gem 'shoulda-matchers'
   gem 'awesome_print'
   gem 'webmock'
