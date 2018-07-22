@@ -10,6 +10,10 @@
      <a href="/get_started">Get Started</a>
    </div>
    <div class="login nav-link col md-col-2">
-     <a href="/login">Sign In</a>
+     <% if current_user %>
+      <a href="/logout">Log Out</a>
+     <% else %>
+      <a href="/login">Sign In</a>
+     <% end %>
    </div>
  </nav>
