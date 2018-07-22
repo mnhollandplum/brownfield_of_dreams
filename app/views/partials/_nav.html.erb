@@ -11,9 +11,13 @@
    </div>
    <div class="login nav-link col md-col-2">
      <% if current_user %>
-      <a href="/logout">Log Out</a>
+      <a>
+        <%= link_to 'Sign Out', logout_path, method: :delete %>
+      </a>
      <% else %>
-      <a href="/login">Sign In</a>
+      <a>
+        <%= link_to 'Sign In', login_path %>
+      </a>
      <% end %>
    </div>
  </nav>

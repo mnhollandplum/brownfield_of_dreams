@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
   
+  get '/dashboard', to: 'users#show'
+
   resources :users, only: [:new, :create, :update, :edit]
 
-  get '/dashboard', to: 'users#show'
 
   get '/video' ,to: 'video#show'
 
