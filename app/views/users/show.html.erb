@@ -5,3 +5,5 @@
   <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
   <li> <%= current_user.email%> </li>
 </ul>
+
+<h3> <%= link_to 'Log Out', logout_path, method: :delete %> </h3>

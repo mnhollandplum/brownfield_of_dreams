@@ -12,7 +12,7 @@
    <div class="login nav-link col md-col-2">
      <% if current_user %>
       <a>
-        <%= link_to 'Sign Out', logout_path, method: :delete %>
+        <%= link_to current_user.first_name, dashboard_path %>
       </a>
      <% else %>
       <a>

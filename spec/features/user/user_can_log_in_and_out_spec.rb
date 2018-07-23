@@ -31,10 +31,14 @@ describe 'user visits the homepage' do
 
     click_on 'Log In'
 
-    click_on 'Sign Out'
+    click_on user.first_name
+
+    expect(current_path).to eq(dashboard_path)
+
+    click_on 'Log Out'
 
     expect(current_path).to eq(root_path)
-
+    expect(page).to_not have_content(user.first_name)
     expect(page).to have_content('Sign In')
   end
 end
