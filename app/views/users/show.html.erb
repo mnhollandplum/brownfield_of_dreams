@@ -1,3 +1,6 @@
+<% if current_user.admin? %>
+<%= render 'partials/tools' %>
+<% end %>
 <h1> <%= current_user.first_name %>'s Dashboard </h1>
 
 <h3>Account Details</h3>

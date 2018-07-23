@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @videos = VideoService.new.playlist
+    @videos = Video.all
   end
 end

@@ -4,6 +4,8 @@ describe 'visitor sees a video show' do
   it 'vistor clicks on a video title from the home page' do
     visit '/'
 
+    save_and_open_page
+
     click_on 'Test Ten'
 
     expect(current_path).to eq('/video')
