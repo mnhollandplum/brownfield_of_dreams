@@ -8,7 +8,7 @@
     </div>
 
     <div class="video-description col md-col-10">
-      <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %>
+      <%= link_to video.title, video_path(video) %>
       <p> <%= video.description %> </p>
     </div>
   </section>

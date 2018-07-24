@@ -11,9 +11,7 @@ Rails.application.routes.draw do
 
   resources :users, only: [:new, :create, :update, :edit]
   resources :tutorials, only: [:show, :index]
-
-
-
-  get '/video' ,to: 'video#show'
+  resources :videos, only: [:show, :index]
+  resources :user_videos, only:[:create, :destroy]
 
 end

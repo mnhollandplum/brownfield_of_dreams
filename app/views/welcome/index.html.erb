@@ -1,16 +1,16 @@
 <%= render 'partials/search' %>
 <body>
-  <section class="videos col md-col-8">
-    <% @videos.each do |video| %>
-    <div class="video">
-      <img class="thumbnail col md-col-3" src= <%= "#{video.thumbnail}" %> alt="kitten in a doughnut">
-      <div class="video-description col md-col-9">
-        <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %>
-        <p class="description"><%= video.description %></p>
+  <section class="tutorials col md-col-8">
+    <% @tutorials.each do |tutorial| %>
+    <div class="tutorial">
+      <img class="thumbnail col md-col-3" src= <%= "#{tutorial.thumbnail}" %> alt="kitten in a doughnut">
+      <div class="tutorial-description col md-col-9">
+        <%= link_to tutorial.title, tutorial_path(tutorial) %>
+        <p class="description"><%= tutorial.description %></p>
       </div>
     </div>
     <% end %>
-    <%= will_paginate @videos %>
+    <%= will_paginate @tutorials %>
   </section>
   <aside class="categories col md-col-4">
     <h1>Filters:</h1>
