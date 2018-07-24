@@ -9,6 +9,10 @@
    width: 65px;
  }
 
+ .videos {
+   padding-left: 15px;
+ }
+
  .thumbnail {
    padding: 5px;
    height: 180px;
@@ -79,4 +83,22 @@
 
  .video-view {
    max-width: 50%;
+ }
+
+ .tutorials {
+   margin: auto;
+   width: 75%;
+   padding: 10px;
+   height:1000px;
+ }
+
+ .tutorial {
+   height: 200px;
+ }
+
+ .dashboard-main {
+   margin: auto;
+   width: 75%;
+   padding: 10px;
+   height:1000px;
  }

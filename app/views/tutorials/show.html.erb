@@ -1,0 +1,16 @@
+<main class="tutorials">
+  <% @videos.each do |video| %>
+  <section class="video">
+    <div class="video-thumbnail col md-col-2">
+      <a href="">
+        <img class"thumbnail" src= <%= "#{video.thumbnail}" %> alt="">
+      </a>
+    </div>
+
+    <div class="video-description col md-col-10">
+      <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %>
+      <p> <%= video.description %> </p>
+    </div>
+  </section>
+  <% end %>
+</main>

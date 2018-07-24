@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_07_22_204432) do
+ActiveRecord::Schema.define(version: 2018_07_23_214457) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "tutorials", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "thumbnail"
+    t.string "playlist_id"
+    t.boolean "classroom", default: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_videos", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "video_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_user_videos_on_user_id"
+    t.index ["video_id"], name: "index_user_videos_on_video_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email"
@@ -31,6 +50,10 @@ ActiveRecord::Schema.define(version: 2018_07_22_204432) do
     t.text "description"
     t.string "video_id"
     t.string "thumbnail"
+    t.bigint "tutorial_id"
+    t.index ["tutorial_id"], name: "index_videos_on_tutorial_id"
   end
 
+  add_foreign_key "user_videos", "users"
+  add_foreign_key "user_videos", "videos"
 end
