@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   root 'welcome#index'
+  
+  namespace :admin do
+    resources :tutorials, only: [:edit, :update, :destroy]
+  end
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"

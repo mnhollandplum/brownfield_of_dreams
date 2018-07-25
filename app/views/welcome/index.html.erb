@@ -3,7 +3,12 @@
   <section class="tutorials col md-col-8">
     <% @tutorials.each do |tutorial| %>
     <div class="tutorial">
-      <img class="thumbnail col md-col-3" src= <%= "#{tutorial.thumbnail}" %> alt="kitten in a doughnut">
+      <% if current_user.admin? %>
+      <div class="edit-tutorial<%=tutorial.id %>">
+        <%= link_to 'Add Tag', edit_admin_tutorial_path(tutorial) %>
+      </div>
+      <% end %>
+      <img class="thumbnail col md-col-3" src= <%= "#{tutorial.thumbnail}" %> >
       <div class="tutorial-description col md-col-9">
         <%= link_to tutorial.title, tutorial_path(tutorial) %>
         <p class="description"><%= tutorial.description %></p>
