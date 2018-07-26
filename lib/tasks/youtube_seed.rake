@@ -1,6 +1,11 @@
 namespace :import do
   desc:"All youtube data"
-  task all: [:tutorials, :videos]
+  task all: [:users, :tutorials, :videos]
+
+  desc:"Create Users"
+  task :users, [:users] => :environment do
+    User.create(email: "admin@email.com", first_name: "Admin", last_name: "Adminington", password: ENV['ADMIN_PASSWORD'], role: 2)
+  end
 
   desc:"Create Tutorials"
   task :tutorials, [:tutorials] => :environment do
