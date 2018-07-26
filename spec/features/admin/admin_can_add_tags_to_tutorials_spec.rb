@@ -9,12 +9,12 @@ describe 'An admin user can add tags to tutorials' do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit '/'
-    
+
     within(".edit-tutorial#{tutorial.id}") do
       click_on 'Add Tag'
     end
 
-    expect(current_path).to eq(tutoral_path(tutoral))
+    expect(current_path).to eq(edit_admin_tutorial_path(tutorial))
 
   end
 end

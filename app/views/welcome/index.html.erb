@@ -3,15 +3,15 @@
   <section class="tutorials col md-col-8">
     <% @tutorials.each do |tutorial| %>
     <div class="tutorial">
-      <% if current_user.admin? %>
-      <div class="edit-tutorial<%=tutorial.id %>">
-        <%= link_to 'Add Tag', edit_admin_tutorial_path(tutorial) %>
-      </div>
-      <% end %>
       <img class="thumbnail col md-col-3" src= <%= "#{tutorial.thumbnail}" %> >
       <div class="tutorial-description col md-col-9">
         <%= link_to tutorial.title, tutorial_path(tutorial) %>
         <p class="description"><%= tutorial.description %></p> <br>
+        <% if current_user != nil && current_user.admin?  %>
+        <div class="edit-tutorial<%=tutorial.id %>">
+          <%= link_to 'Add Tag', edit_admin_tutorial_path(tutorial) %>
+        </div>
+        <% end %>
         <p>Tags: <%= tutorial.tag_list %></p>
       </div>
     </div>
