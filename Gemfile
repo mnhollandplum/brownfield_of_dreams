@@ -31,6 +31,8 @@ gem 'faker'
 gem 'active_model_serializers'
 gem 'omniauth-google-oauth2'
 gem 'will_paginate'
+gem 'acts-as-taggable-on', '~> 6.0'
+
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

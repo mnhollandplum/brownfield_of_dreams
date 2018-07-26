@@ -1,0 +1,11 @@
+<div class="tag-field">
+
+<%= form_for [:admin, @tutorial] do |f| %>
+
+<%= f.label :tag_list, "Tags (separted by commas)" %>
+<%= f.text_field :tag_list %>
+
+<%= f.submit %>
+<% end %>
+
+</div>
