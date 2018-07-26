@@ -1,16 +1,28 @@
 <main class="tutorials">
-  <% @videos.each do |video| %>
-  <section class="video">
-    <div class="video-thumbnail col md-col-2">
-      <a href="">
-        <img class"thumbnail" src= <%= "#{video.thumbnail}" %> alt="">
-      </a>
-    </div>
+<h2><%= @presenter.title %></h2>
+<div class="col col-4">
+  <h4>Videos</h4>
+  <ul>
+    <% @presenter.videos.each.with_index(1) do |video, index| %>
+      <li><%= index %>. <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %></li>
+    <% end %>
+  </ul>
+</div>
 
-    <div class="video-description col md-col-10">
-      <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %>
-      <p> <%= video.description %> </p>
-    </div>
-  </section>
-  <% end %>
+
+<div class="col col-8">
+  <h3>1. <%= @presenter.current_video.title %></h3>
+
+  <div class="video-view">
+    <iframe src= <%="https://www.youtube.com/embed/#{@presenter.current_video.video_id}" %>  width="650" height="300"></iframe>
+  </div>
+
+  <h4>Description</h4>
+  <p data-controller="tutorials">
+    <%= @presenter.description.truncate(50) %>...
+    <%= link_to "More", "#", "data-action" => "showDescription"%>
+  </p>
+
+</div>
+
 </main>

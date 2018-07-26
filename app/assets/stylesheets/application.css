@@ -1,104 +1,124 @@
- nav {
-   background-color: rgb(61, 64, 64);
-   height: 75px;
- }
+h1, h2, h3, h4, h5, h6 {
+  color: #3c4040;
+}
 
- img {
-   padding: 5px;
-   height: 65px;
-   width: 65px;
- }
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+}
 
- .videos {
-   padding-left: 15px;
- }
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
 
- .thumbnail {
-   padding: 5px;
-   height: 180px;
-   width: 200px;
- }
- .turing-logo {
-   height: 65px;
- }
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
 
- .bar {
-   height: 40px;
-   background-color: rgb(238, 238, 238);
- }
+nav {
+  background-color: rgb(61, 64, 64);
+  height: 75px;
+}
 
- .search-field {
-   padding: 2px;
- }
+img {
+  padding: 5px;
+  height: 65px;
+  width: 65px;
+}
 
- .nav-link a {
-   color: white;
-   margin: .7em;
- }
+.videos {
+  padding-left: 15px;
+}
 
- .nav-link {
-   margin-top: 1.3em;
- }
+.thumbnail {
+  padding: 5px;
+  height: 180px;
+  width: 200px;
+}
+.turing-logo {
+  height: 65px;
+}
 
- .links {
-   text-align: right;
- }
+.bar {
+  height: 40px;
+  background-color: rgb(238, 238, 238);
+}
 
- .login {
-   text-align: right;
-   padding-right: 10px;
- }
+.search-field {
+  padding: 2px;
+}
 
- .categories {
-   padding-left: 10px;
-   border: 2px solid black;
-   height: 550px;
- }
+.nav-link a {
+  color: white;
+  margin: .7em;
+}
 
- .videos {
-   height: 1000px;
- }
+.nav-link {
+  margin-top: 1.3em;
+}
 
- .video {
-   margin-left: 10px;
-   height: 190px;
-   width: 1000px;
- }
+.links {
+  text-align: right;
+}
 
- .video-description p {
-   font-size: 12px;
- }
+.login {
+  text-align: right;
+  padding-right: 10px;
+}
 
- .video-description {
-   height: 190px;
-   width: 550px;
- }
+.categories {
+  padding-left: 10px;
+  border: 2px solid black;
+  height: 550px;
+}
 
- .video-container{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 500px;
- }
+.videos {
+  height: 1000px;
+}
 
- .video-view {
-   max-width: 50%;
- }
+.video {
+  margin-left: 10px;
+  height: 190px;
+  width: 1000px;
+}
 
- .tutorials {
-   margin: auto;
-   width: 75%;
-   padding: 10px;
-   height:1000px;
- }
+.video-description p {
+  font-size: 12px;
+}
 
- .tutorial {
-   height: 200px;
- }
+.video-description {
+  height: 190px;
+  width: 550px;
+}
 
- .dashboard-main {
-   margin: auto;
-   width: 75%;
-   padding: 10px;
-   height:1000px;
- }
+.video-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.video-view {
+  max-width: 50%;
+}
+
+.tutorials {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:1000px;
+}
+
+.tutorial {
+  height: 200px;
+}
+
+.dashboard-main {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:1000px;
+}
