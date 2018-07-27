@@ -1,6 +1,6 @@
-import { Application } from 'stimulus'
-import { autoload } from 'stumulus/webpack-helpers'
+import { Application } from "stimulus"
+import { definitionsFromContext } from "stimulus/webpack-helpers"
 
 const application = Application.start()
-const constrollers = require.context("./controllers", true, /\.js/ )
-autoload(controllers, application)
+const context = require.context("./controllers", true, /\.js$/)
+application.load(definitionsFromContext(context))

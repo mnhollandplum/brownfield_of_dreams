@@ -20,7 +20,7 @@
   <h4>Description</h4>
   <p data-controller="tutorials">
     <%= @presenter.description.truncate(50) %>...
-    <%= link_to "More", "#", "data-action" => "showDescription"%>
+    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription"%>
   </p>
 
 </div>
