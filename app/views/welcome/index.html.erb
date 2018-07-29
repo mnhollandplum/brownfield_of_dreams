@@ -9,7 +9,7 @@
         <p class="description"><%= tutorial.description %></p> <br>
         <% if current_user != nil && current_user.admin?  %>
         <div class="edit-tutorial<%=tutorial.id %>">
-          <%= link_to 'Add Tag', edit_admin_tutorial_path(tutorial) %>
+          <%= link_to 'Edit Tags', edit_admin_tutorial_path(tutorial) %>
         </div>
         <% end %>
         <p>Tags: <%= tutorial.tag_list %></p>
@@ -21,29 +21,12 @@
   <aside class="categories col md-col-4">
     <h1>Filters:</h1>
     <hr>
-    <div class="experience filter">
-      <h3>Experience Level:</h3>
-      <hr>
-      <input type="checkbox" name="filter" value="new"> Brand new<br>
-      <input type="checkbox" name="filter" value="experienced"> Experienced<br>
-      <input type="checkbox" name="filter" value="current-student"> Current Student<br>
-    </div>
-
-    <div class="stack filter">
-      <h3>Stack:</h3>
-      <hr>
-      <input type="checkbox" name="filter" value="frontend"> Frontend<br>
-      <input type="checkbox" name="filter" value="backend"> Backend<br>
-    </div>
-
-    <div class="technologies filter">
-      <h3>Technologies:</h3>
-      <hr>
-      <input type="checkbox" name="filter" value="ruby"> Ruby<br>
-      <input type="checkbox" name="filter" value="rails"> Rails<br>
-      <input type="checkbox" name="filter" value="javascript"> Javascript<br>
-      <input type="checkbox" name="filter" value="html"> HTML<br>
-      <input type="checkbox" name="filter" value="css"> CSS<br>
+    <div class="tags">
+      <% @list.each do |l| %>
+      <ul>
+        <li><%= link_to l, tag_path(l) %> </li>
+      </ul>
+      <% end %>
     </div>
   </aside>
 </body>
