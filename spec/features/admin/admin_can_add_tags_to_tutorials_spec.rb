@@ -11,7 +11,7 @@ describe 'An admin user can add tags to tutorials' do
     visit '/'
 
     within(".edit-tutorial#{tutorial.id}") do
-      click_on 'Add Tag'
+      click_on 'Edit Tag'
     end
 
     expect(current_path).to eq(edit_admin_tutorial_path(tutorial))
