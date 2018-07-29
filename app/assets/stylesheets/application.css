@@ -1,3 +1,4 @@
+<<<<<<< HEAD
  nav {
    background-color: rgb(61, 64, 64);
    height: 75px;
@@ -103,3 +104,129 @@
    padding: 10px;
    height:1000px;
  }
+=======
+h1, h2, h3, h4, h5, h6 {
+  color: #3c4040;
+}
+
+h2 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 48px;
+}
+
+h3 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+h4 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+
+nav {
+  background-color: rgb(61, 64, 64);
+  height: 75px;
+}
+
+img {
+  padding: 5px;
+  height: 65px;
+  width: 65px;
+}
+
+.videos {
+  padding-left: 15px;
+}
+
+.thumbnail {
+  padding: 5px;
+  height: 180px;
+  width: 200px;
+}
+.turing-logo {
+  height: 65px;
+}
+
+.bar {
+  height: 40px;
+  background-color: rgb(238, 238, 238);
+}
+
+.search-field {
+  padding: 2px;
+}
+
+.nav-link a {
+  color: white;
+  margin: .7em;
+}
+
+.nav-link {
+  margin-top: 1.3em;
+}
+
+.links {
+  text-align: right;
+}
+
+.login {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.categories {
+  padding-left: 10px;
+  border: 2px solid black;
+  height: 550px;
+}
+
+.videos {
+  height: 1000px;
+}
+
+.video {
+  margin-left: 10px;
+  height: 190px;
+  width: 1000px;
+}
+
+.video-description p {
+  font-size: 12px;
+}
+
+.video-description {
+  height: 190px;
+  width: 550px;
+}
+
+.video-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+
+.video-view {
+  max-width: 50%;
+}
+
+.tutorials {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:1000px;
+}
+
+.tutorial {
+  height: 200px;
+}
+
+.dashboard-main {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:1000px;
+}
+>>>>>>> 4154e85e8d81c5c00ad8a87b78fce82f1e9a8ddf

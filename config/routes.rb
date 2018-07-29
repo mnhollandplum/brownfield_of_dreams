@@ -18,5 +18,4 @@ Rails.application.routes.draw do
   resources :tutorials, only: [:show, :index]
   resources :videos, only: [:show, :index]
   resources :user_videos, only:[:create, :destroy]
-
 end
