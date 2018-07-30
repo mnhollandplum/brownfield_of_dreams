@@ -234,3 +234,30 @@ img {
   text-decoration: none;
   cursor: default;
 }
+
+.about-container {
+  height: 1250px;
+}
+
+.about-header {
+  margin: auto;
+  width: 75%;
+}
+
+.about-main {
+  margin: auto;
+  width: 75%;
+  height:500px;
+}
+
+.started-header {
+  margin: auto;
+  width: 75%;
+}
+
+.started-main {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:500px;
+}
