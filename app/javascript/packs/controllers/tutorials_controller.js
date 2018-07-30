@@ -1,7 +1,12 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ["tutorial"]
+
+  showVideo(event) {
+    event.preventDefault();
+    console.log("hello!");
+  }
+
 
   showDescription(event) {
     event.preventDefault();
@@ -11,10 +16,6 @@ export default class extends Controller {
         const desc = document.querySelector(`#description-${event.target.id}`);
         desc.innerHTML = response.description
       });
-
   }
-
-
-
 
 }

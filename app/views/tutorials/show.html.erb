@@ -4,7 +4,7 @@
   <h4>Videos</h4>
   <ul>
     <% @presenter.videos.each.with_index(1) do |video, index| %>
-      <li><%= index %>. <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %></li>
+      <li> <%= index %>. <%= link_to video.title, "#", "data-action" => "click->tutorials#showVideo" %> </li>
     <% end %>
   </ul>
 </div>
