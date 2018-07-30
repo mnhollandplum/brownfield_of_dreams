@@ -10,7 +10,7 @@
 </div>
 
 <div class="col col-8">
-  <h3>1. <%= @presenter.current_video.title %></h3>
+  <h3><%= @presenter.current_video.title %></h3>
 
   <div class="video-view">
     <iframe src= <%="https://www.youtube.com/embed/#{@presenter.current_video.video_id}" %>  width="650" height="300"></iframe>
@@ -18,8 +18,8 @@
 
   <h4>Description</h4>
   <div data-controller="tutorials">
-    <p data-target= "tutorials.tutorial">
-      <%= @presenter.description.truncate(50) %>...
+    <p data-target= "tutorials.tutorial" id="description-<%= @presenter.id %>">
+      <span><%= @presenter.description.truncate(50) %>...</span>
       <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id %>
     </p>
   </div>

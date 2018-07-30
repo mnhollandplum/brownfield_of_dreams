@@ -7,7 +7,11 @@ export default class extends Controller {
     event.preventDefault();
     fetch(`/api/v1/tutorials/${event.target.id}`)
       .then((response) => response.json())
-      .then((response) => console.log(response.description))
+      .then(function(response){
+        const desc = document.querySelector(`#description-${event.target.id}`);
+        desc.innerHTML = response.description
+      });
+
   }
 
 
