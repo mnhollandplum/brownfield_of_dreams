@@ -16,4 +16,8 @@ class ApplicationController < ActionController::Base
       tutorial.tag_list
     end.flatten(1)
   end
+
+  def current_tutorial
+    
+  end
 end
