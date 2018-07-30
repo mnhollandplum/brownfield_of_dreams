@@ -4,25 +4,54 @@
   <h4>Videos</h4>
   <ul>
     <% @presenter.videos.each.with_index(1) do |video, index| %>
-      <li> <%= index %>. <%= link_to video.title, "#", "data-action" => "click->tutorials#showVideo" %> </li>
+      <li><%= index %>. <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %></li>
     <% end %>
   </ul>
 </div>
 
+
 <div class="col col-8">
-  <h3><%= @presenter.current_video.title %></h3>
+  <h3>1. <%= @presenter.current_video.title %></h3>
 
   <div class="video-view">
-    <iframe src= <%="https://www.youtube.com/embed/#{@presenter.current_video.video_id}" %>  width="650" height="300"></iframe>
-  </div>
+    <!-- <iframe src= <%="https://www.youtube.com/embed/#{@presenter.current_video.video_id}" %>  width="650" height="300"></iframe> -->
+  <div id="player">
+    <script src="http://www.youtube.com/player_api"></script>
+    <script>
+    // create youtube player
+    var player;
+    function onYouTubePlayerAPIReady() {
+      player = new YT.Player('player', {
+        width: '640',
+        height: '390',
+        videoId: '<%= @presenter.current_video.video_id  %>',
+        events: {
+          onReady: onPlayerReady,
+          onStateChange: onPlayerStateChange
+        }
+      });
+    }
+
+    // autoplay video
+    function onPlayerReady(event) {
+      event.target.playVideo();
+    }
+
+    // when video ends
+    function onPlayerStateChange(event) {
+      if(event.data === 0) {
+        alert('done');
+      }
+    }
+  </script>
+</div>
 
   <h4>Description</h4>
-  <div data-controller="tutorials">
-    <p data-target= "tutorials.tutorial" id="description-<%= @presenter.id %>">
-      <span><%= @presenter.description.truncate(50) %>...</span>
-      <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id %>
-    </p>
-  </div>
+  <p data-controller="tutorials" id="description-<%= @presenter.id %>">
+    <%= @presenter.description.truncate(50) %>...
+    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id%>
+  </p>
+
 </div>
 
 </main>

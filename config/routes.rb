@@ -4,7 +4,7 @@ Rails.application.routes.draw do
       resources :tutorials, only:[:show, :index]
     end
   end
-  
+
   root 'welcome#index'
   get 'tags/:tag', to: 'welcome#index', as: :tag
 
@@ -23,6 +23,10 @@ Rails.application.routes.draw do
   get '/video' ,to: 'video#show'
 
   resources :users, only: [:new, :create, :update, :edit]
-  resources :tutorials, only: [:show, :index]
+
+  resources :tutorials, only: [:show, :index] do
+    resources :videos, only: [:show, :index]
+  end
+
   resources :user_videos, only:[:create, :destroy]
 end
