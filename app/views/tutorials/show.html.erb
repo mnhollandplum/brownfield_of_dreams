@@ -17,11 +17,12 @@
   </div>
 
   <h4>Description</h4>
-  <p data-controller="tutorials">
-    <%= @presenter.description.truncate(50) %>...
-    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription"%>
-  </p>
-
+  <div data-controller="tutorials">
+    <p data-target= "tutorials.tutorial">
+      <%= @presenter.description.truncate(50) %>...
+      <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id %>
+    </p>
+  </div>
 </div>
 
 </main>
