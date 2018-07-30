@@ -228,3 +228,9 @@ img {
   padding: 10px;
   height:1000px;
 }
+
+.chosen {
+  font-weight: bold;
+  text-decoration: none;
+  cursor: default;
+}

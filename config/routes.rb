@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :api do
+    namespace :v1 do
+      resources :tutorials, only:[:show, :index]
+    end
+  end
+  
   root 'welcome#index'
   get 'tags/:tag', to: 'welcome#index', as: :tag
 

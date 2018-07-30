@@ -4,25 +4,25 @@
   <h4>Videos</h4>
   <ul>
     <% @presenter.videos.each.with_index(1) do |video, index| %>
-      <li><%= index %>. <%= link_to video.title, controller: "video", action: "show", video_id: video.video_id, class: "title" %></li>
+      <li> <%= index %>. <%= link_to video.title, "#", "data-action" => "click->tutorials#showVideo" %> </li>
     <% end %>
   </ul>
 </div>
 
-
 <div class="col col-8">
-  <h3>1. <%= @presenter.current_video.title %></h3>
+  <h3><%= @presenter.current_video.title %></h3>
 
   <div class="video-view">
     <iframe src= <%="https://www.youtube.com/embed/#{@presenter.current_video.video_id}" %>  width="650" height="300"></iframe>
   </div>
 
   <h4>Description</h4>
-  <p data-controller="tutorials">
-    <%= @presenter.description.truncate(50) %>...
-    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription"%>
-  </p>
-
+  <div data-controller="tutorials">
+    <p data-target= "tutorials.tutorial" id="description-<%= @presenter.id %>">
+      <span><%= @presenter.description.truncate(50) %>...</span>
+      <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id %>
+    </p>
+  </div>
 </div>
 
 </main>
