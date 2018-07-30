@@ -10,7 +10,7 @@
     <h1>Bookmarked Segments</h1>
     <% @videos.each do |video| %>
     <ul>
-      <li> <%= link_to video.title, video_path(video) %>
+      <li> <%= link_to video.title, tutorial_path(video.tutorial_id, video_id: video.id) %>
            <%= link_to 'Remove', user_video_path(video), method: 'DELETE'%>
       </li>
     </ul>
