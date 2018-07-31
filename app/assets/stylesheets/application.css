@@ -96,11 +96,11 @@
    max-width: 50%;
  }
 
- .tutorials {
+ section.tutorials {
    margin: auto;
    width: 75%;
    padding: 10px;
-   height:1000px;
+   height:1500px;
  }
 
  .tutorial {
@@ -306,4 +306,8 @@ section.login-new {
 
 .bookmark {
   margin-top: 10px;
+}
+
+#tag_cloud {
+  .m {font-size: 1.2em; }
 }

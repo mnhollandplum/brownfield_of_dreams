@@ -22,7 +22,7 @@
     <% elsif current_user && @current_vid != nil %>
       <%= button_to "Add to Bookmarks", user_videos_path(video_id: @current_vid.id, user_id: current_user.id), method: :post, class: "btn btn-outline mb1 blue" %>
     <% else %>
-      <%= button_to "Add to Bookmarks", login_path, class: "btn btn-outline mb1 blue" %>
+      <%= link_to "Add to Bookmarks", login_path, class: "btn btn-outline mb1 blue" %>
     <% end %>
   </div>
 
