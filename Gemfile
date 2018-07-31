@@ -17,6 +17,7 @@ gem 'webpacker', '~> 3.5'
 gem 'yt', '~> 0.29.1'
 gem 'google-api-client'
 gem 'faraday'
+gem 'jquery'
 gem 'figaro'
 gem 'factory_bot_rails'
 gem 'faker'
@@ -24,6 +25,7 @@ gem 'active_model_serializers'
 gem 'omniauth-google-oauth2'
 gem 'will_paginate'
 gem 'acts-as-taggable-on', '~> 6.0'
+gem 'omniauth-census', git: "https://github.com/turingschool-projects/omniauth-census"
 
 
 group :development, :test do

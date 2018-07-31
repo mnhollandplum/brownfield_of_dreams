@@ -11,10 +11,10 @@
     <% @videos.each do |video| %>
     <ul>
       <li> <%= link_to video.title, tutorial_path(video.tutorial_id, video_id: video.id) %>
-           <%= link_to 'Remove', user_video_path(video), method: 'DELETE'%>
+      <%= button_to 'Remove', user_video_path(video), method: :delete, class: "btn btn-outline mb1 red" %>
       </li>
     </ul>
     <% end %>
   </section>
-  <h3> <%= link_to 'Log Out', logout_path, method: :delete %> </h3>
+  <h3> <%= button_to 'Log Out', logout_path, method: 'delete' %> </h3>
 </section>

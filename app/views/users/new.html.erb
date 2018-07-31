@@ -1,20 +1,33 @@
-<%= form_for @user do |form| %>
-
-<%= form.label :email %>
-<%= form.email_field :email %>
-
-<%= form.label :first_name %>
-<%= form.text_field :first_name %>
-
-<%= form.label :last_name %>
-<%= form.text_field :last_name %>
-
-<%= form.label :password %>
-<%= form.password_field :password %>
-
-<%= form.label :password_confirmation %>
-<%= form.password_field :password_confirmation %>
-
-<%= form.submit 'Create Account' %>
-
-<% end %>
+<div class="user-login">
+  <main>
+    <section class="login-new">
+      <%= form_for @user do |form| %>
+      <div >
+        <%= form.label :email %>
+        <%= form.email_field :email %>
+      </div>
+      <div >
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+      </div>
+      <div>
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name %>
+      </div>
+      <div>
+        <%= form.label :password %>
+        <%= form.password_field :password %>
+      </div>
+      <div>
+        <%= form.label :password_confirmation %>
+        <%= form.password_field :password_confirmation %>
+      </div>
+    </section>
+    <div class="login-btns">
+      <div class="create">
+        <%= form.submit 'Create Account',  class: "btn btn-primary mb1 bg-teal" %>
+        <% end %>
+      </div>
+    </div>
+  </main>
+</div>

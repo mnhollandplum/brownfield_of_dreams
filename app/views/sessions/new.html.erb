@@ -1,11 +1,22 @@
-<%= form_for :session, url: login_path do |f| %>
-<%= f.label :email %>
-<%= f.email_field :email %>
-
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.submit 'Log In'%>
-<% end %>
-
-<%= link_to 'Create Account', new_user_path  %>
+<div class="user-login">
+  <main>
+    <section class="login-new">
+      <%= form_for :session, url: login_path, class: "newclass" do |f| %>
+      <div>
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+      <div>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+    </section>
+    <div class="login-btns">
+      <div class="login-create">
+        <%= f.submit 'Log In', class: "btn btn-primary mb1 bg-teal" %>
+        <% end %>
+        <%= link_to 'Create Account', new_user_path, class: "btn btn-primary mb1 bg-teal" %>
+      </div>
+    </div>
+  </main>
+</div>

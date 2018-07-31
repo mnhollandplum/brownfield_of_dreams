@@ -3,6 +3,10 @@
    height: 75px;
  }
 
+ ul {
+  list-style-type: none;
+}
+
  img {
    padding: 5px;
    height: 65px;
@@ -17,9 +21,15 @@
    padding: 5px;
    height: 180px;
    width: 200px;
+   border-radius: 10%;
  }
+
  .turing-logo {
    height: 65px;
+ }
+
+ .tutorial-description {
+   padding: 10px;
  }
 
  .bar {
@@ -51,7 +61,6 @@
 
  .categories {
    padding-left: 10px;
-   border: 2px solid black;
    height: 550px;
    width: 275px;
  }
@@ -175,12 +184,6 @@ img {
   padding-right: 10px;
 }
 
-.categories {
-  padding-left: 10px;
-  border: 2px solid black;
-  height: 550px;
-}
-
 .videos {
   height: 1000px;
 }
@@ -229,12 +232,6 @@ img {
   height:1000px;
 }
 
-.chosen {
-  font-weight: bold;
-  text-decoration: none;
-  cursor: default;
-}
-
 .about-container {
   height: 1250px;
 }
@@ -260,4 +257,41 @@ img {
   width: 75%;
   padding: 10px;
   height:500px;
+}
+
+.user-login {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  width: 380px;
+}
+
+section.login-new form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+section.login-new form div{
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+section.login-new {
+  background-color: grey;
+  color: white;
+}
+
+.login-create {
+  width: 240px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.create {
+  width: 155px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 15px;
 }

@@ -16,6 +16,16 @@
     <h3><%= @current_vid.title %></h3>
   <% end %>
 
+  <div class="bookmarks-btn">
+    <% if current_user && @current_vid == nil %>
+      <%= button_to "Add to Bookmarks", user_videos_path(video_id: @presenter.current_video.id, user_id: current_user.id), method: :post, class: "btn btn-outline mb1 blue" %>
+    <% elsif current_user && @current_vid != nil %>
+      <%= button_to "Add to Bookmarks", user_videos_path(video_id: @current_vid.id, user_id: current_user.id), method: :post, class: "btn btn-outline mb1 blue" %>
+    <% else %>
+      <%= button_to "Add to Bookmarks", login_path, class: "btn btn-outline mb1 blue" %>
+    <% end %>
+  </div>
+
   <div id="player">
     <script src="https://www.youtube.com/player_api"></script>
     <script>
@@ -52,20 +62,10 @@
 </div>
 
   <h4>Description</h4>
-  <p data-controller="tutorials" id="description-<%= @presenter.id %>">
-    <%= @presenter.description.truncate(50) %>...
-    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.id%>
+  <p data-controller="tutorials" id="description-<%= @presenter.current_video.id %>">
+    <%= @presenter.current_video.description.truncate(50) %>...
+    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.current_video.id%>
   </p>
-</div>
-
-<div class="bookmarks-btn">
-  <% if current_user && @current_vid == nil %>
-    <%= button_to "Add to Bookmarks", user_videos_path(video_id: @presenter.current_video.id, user_id: current_user.id), method: :post %>
-  <% elsif current_user && @current_vid != nil %>
-    <%= button_to "Add to Bookmarks", user_videos_path(video_id: @current_vid.id, user_id: current_user.id), method: :post %>
-  <% else %>
-    <%= button_to "Add to Bookmarks", login_path %>
-  <% end %>
 </div>
 
 </main>
