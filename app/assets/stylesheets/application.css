@@ -1,6 +1,6 @@
  nav {
    background-color: rgb(61, 64, 64);
-   height: 100px;
+   height: 150px;
  }
 
  ul {
@@ -12,6 +12,55 @@
    height: 65px;
    width: 65px;
  }
+
+ .nav-link a {
+   color: white;
+   margin: .7em;
+ }
+
+ .nav-link {
+   margin-top: 1.3em;
+   font-size: 30px;
+ }
+
+ .links {
+   text-align: right;
+ }
+
+ .login {
+   text-align: right;
+   padding-right: 15px;
+   height:150px;
+ }
+
+ .turing-logo {
+   width: 150px;
+   height: 150px;
+ }
+
+ .turing-logo img {
+   height: 125px;
+   width: 125px;
+   padding: 13px;
+ }
+
+ .title-container {
+   color: white;
+   height: 150px;
+   width: 690px;
+   padding-top: 15px;
+ }
+
+ .turing-title {
+   font-size: 65px;
+   padding-left: 15px;
+   height: 80px;
+ }
+
+ .turing-title p {
+   margin:0
+ }
+
  .title-link {
    color: rgb(103, 201,	203);
  }
@@ -31,10 +80,6 @@
    border-radius: 10%;
  }
 
- .turing-logo {
-   height: 65px;
-   padding-left: 10px;
- }
 
  .tutorial-description {
    padding: 10px;
@@ -49,23 +94,6 @@
    padding: 2px;
  }
 
- .nav-link a {
-   color: white;
-   margin: .7em;
- }
-
- .nav-link {
-   margin-top: 1.3em;
- }
-
- .links {
-   text-align: right;
- }
-
- .login {
-   text-align: right;
-   padding-right: 15px;
- }
 
  .categories {
    padding-left: 10px;
@@ -141,11 +169,6 @@ h4 {
   font-weight: bold;
 }
 
-nav {
-  background-color: rgb(61, 64, 64);
-  height: 75px;
-}
-
 img {
   padding: 5px;
   height: 65px;
@@ -160,9 +183,6 @@ img {
   padding: 5px;
   height: 180px;
   width: 200px;
-}
-.turing-logo {
-  height: 65px;
 }
 
 .bar {
@@ -200,10 +220,6 @@ img {
   margin-left: 10px;
   height: 190px;
   width: 1000px;
-}
-
-.video-description p {
-  font-size: 12px;
 }
 
 .video-description {

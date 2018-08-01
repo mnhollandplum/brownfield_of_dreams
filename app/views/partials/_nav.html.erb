@@ -1,14 +1,22 @@
  <nav>
-   <div class="turing-logo col md-col-5">
+   <div class="turing-logo col col-2">
      <a href="/">
-       <img src="https://assets.brandfolder.com/ojowqs-1xtoa8-44t2ts/view.png" alt="turing logo">
-     </a>
-   </div>
-   <div class="links nav-link col md-col-5">
+         <img src="https://assets.brandfolder.com/ojowqs-1xtoa8-44t2ts/view.png" alt="turing logo">
+      </a>
+  </div>
+  <div class="title-container col col-5">
+    <div class="turing-title">
+      <p>TURING</p>
+    </div>
+    <div class="turing-subtitle">
+      <p>SCHOOL OF SOFTWARE AND DESIGN</p>
+    </div>
+  </div>
+   <div class="links nav-link col col-3">
      <a href="/about">About</a>
      <a href="/get_started">Get Started</a>
    </div>
-   <div class="login nav-link col md-col-2">
+   <div class="login nav-link col col-2">
      <% if current_user %>
       <a>
         <%= link_to current_user.first_name, dashboard_path %>
