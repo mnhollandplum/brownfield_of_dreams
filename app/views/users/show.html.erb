@@ -11,7 +11,7 @@
     <hr>
     <% @videos.each do |video| %>
     <ul>
-      <li >
+      <li class="segment-<%= video.id %>" >
         <h3 class="dash-tutorial"><%= tutorial_name(video.tutorial_id) %>:</h3>
         <div class="dash-bookmark">
           <div class="bookmark dash-title">

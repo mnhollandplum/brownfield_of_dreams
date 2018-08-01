@@ -14,8 +14,18 @@ VCR.configure do |config|
   config.allow_http_connections_when_no_cassette = true
 end
 
-
 ActiveRecord::Migration.maintain_test_schema!
+
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(app, browser: :chrome)
+end
+
+Capybara.javascript_driver = :selenium_chrome
+
+Capybara.configure do |config|
+  config.default_max_wait_time = 5
+  config.default_driver        = :selenium
+end
 
 require 'simplecov'
 SimpleCov.start

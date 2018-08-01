@@ -12,11 +12,11 @@ class ApplicationController < ActionController::Base
     current_user.user_videos.find_by(video_id: id)
   end
 
-  def list_tags(tutorials)
-    tutorials.map do |tutorial|
-      tutorial.tag_list
-    end.flatten(1)
-  end
+  # def list_tags(tutorials)
+  #   tutorials.map do |tutorial|
+  #     tutorial.tag_list
+  #   end.flatten(1)
+  # end
 
   def tutorial_name(id)
     Tutorial.find(id).title

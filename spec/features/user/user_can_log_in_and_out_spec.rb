@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-describe 'user visits the homepage' do
-  it 'visits the home page and clicks sign in' do
+describe 'User' do
+  it 'user can sign in', :js do
     user = create(:user)
 
-    visit root_path
+    visit '/'
 
-    click_on 'Sign In'
+    click_on "Sign In"
 
     expect(current_path).to eq(login_path)
 
-    fill_in'session[email]', with: user.email
-    fill_in'session[password]', with: user.password
+    fill_in 'session[email]', with: user.email
+    fill_in 'session[password]', with: user.password
 
     click_on 'Log In'
 
@@ -21,7 +21,7 @@ describe 'user visits the homepage' do
     expect(page).to have_content(user.last_name)
   end
 
-  it 'can log out' do
+  it 'can log out', :js do
     user = create(:user)
 
     visit login_path
@@ -40,5 +40,20 @@ describe 'user visits the homepage' do
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content(user.first_name)
     expect(page).to have_content('Sign In')
+  end
+
+  it 'is shown an error when incorrect info is entered', :js do
+    user = create(:user)
+    fake_email = "email@email.com"
+    fake_password = "123"
+
+    visit login_path
+
+    fill_in'session[email]', with: fake_email
+    fill_in'session[password]', with: fake_password
+
+    click_on 'Log In'
+
+    expect(page).to have_content("Looks like your email or password is invalid")
   end
 end

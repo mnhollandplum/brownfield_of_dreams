@@ -6,15 +6,13 @@
   <section class="tutorials col md-col-8">
     <% @tutorials.each do |tutorial| %>
     <div class="tutorial">
-      <a href= <%= tutorial_path(tutorial) %> >
-      <img class="thumbnail col md-col-3" src= <%= "#{tutorial.thumbnail}" %> >
-      </a>
+        <img class="thumbnail col md-col-3" src= <%="#{tutorial.thumbnail}" %> >
       <div class="tutorial-description col md-col-9">
         <h4 class="tutorial-title-home"><%= link_to tutorial.title, tutorial_path(tutorial), class: "title-link" %> </h4>
         <p class="description"><%= tutorial.description %></p> <br>
         <% if current_user != nil && current_user.admin?  %>
         <div class="edit-tutorial<%=tutorial.id %>">
-          <%= link_to 'Edit Tags', edit_admin_tutorial_path(tutorial), class: "btn btn-outline mb1 bg-red"  %>
+          <%= link_to 'Edit Tags', edit_admin_tutorial_path(tutorial.id), class: "btn btn-outline mb1 bg-red"  %>
         </div>
         <% end %>
       </div>
@@ -33,7 +31,7 @@
         <% tag_cloud Tutorial.tag_counts, %w[.m] do |tag, css_class| %>
       <ul>
         <li>
-          <%= link_to tag.name, tag_path(tag.name), class: css_class, class: "btn btn-primary mb1 bg-teal"  %>
+          <%= link_to tag.name, tag_path(tag.name), class: "btn btn-primary mb1 bg-teal"  %>
         </li>
       </ul>
       <% end %>

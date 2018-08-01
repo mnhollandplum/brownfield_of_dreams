@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'visitor sees a video show' do
-  xit 'vistor clicks on a tutorial title from the home page' do
+  it 'vistor clicks on a tutorial title from the home page' do
     tutorial = create(:tutorial)
     video = create(:video, tutorial_id: tutorial.id)
 
@@ -10,13 +10,7 @@ describe 'visitor sees a video show' do
     click_on tutorial.title
 
     expect(current_path).to eq(tutorial_path(tutorial))
-
-    click_on video.title
-
-    expect(current_path).to eq(video_path(video))
-
-    within('.video-container') do
-      expect(page).to have_css('.video-view')
-    end
+    expect(page).to have_content(video.title)
+    expect(page).to have_content(tutorial.title)
   end
 end
