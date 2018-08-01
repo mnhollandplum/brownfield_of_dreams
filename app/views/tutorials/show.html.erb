@@ -5,20 +5,17 @@
   <ul>
     <% @presenter.videos.each do |video| %>
       <li>
-        <div class="title-list-item">
-          <% if current_user != nil && current_user.admin? %>
-          <%= form_tag(admin_video_path(video), method: :put, id: "edit-position") do %>
-          <%= text_field_tag :position, params[:position], placeholder: video.position %>
-          <%= submit_tag "Edit", class: "btn btn-outline mb1 bg-red" %>
-            <% end %>
+        <h3><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link" %></h3>
+        <% if current_user != nil && current_user.admin? %>
+        <%= form_tag(admin_video_path(video), method: :put, id: "edit-position") do %>
+        <%= text_field_tag :position, params[:position], placeholder: video.position %>
+        <%= submit_tag "Edit", class: "btn btn-outline mb1 bg-red" %>
           <% end %>
-          <h3><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link" %></h3>
-        </div>
+        <% end %>
       </li>
-    </ul>
-  </div>
     <% end %>
-
+  </ul>
+</div>
 
 <div class="col col-8">
   <div class="title-bookmark">

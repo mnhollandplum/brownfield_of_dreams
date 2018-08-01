@@ -331,19 +331,10 @@ div.title-bookmark {
   width: 640px;
 }
 
-form#edit-position {
-  margin-top: 10px;
-  margin-right: 10px;
-}
 
 .bookmarks-btn {
   margin-top: 17px;
 }
-
-.title-list-item {
-  display: flex;
-}
-
 
 #tag_cloud {
   .m {font-size: 1.2em; }
