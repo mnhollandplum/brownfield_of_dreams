@@ -1,7 +1,7 @@
 <div class="search-bar bar">
   <div class=" search-field col md-col-3">
-    <%= form_tag(root_path, method: :get, id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search" %>
+    <%= form_tag(admin_video_path( ), method: :get, id: "search-form") do %>
+      <%= text_field_tag :, params[:position], placeholder: "Search" %>
       <%= submit_tag "Search"  %>
     <% end %>
   </div>

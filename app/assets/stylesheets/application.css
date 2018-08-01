@@ -1,6 +1,6 @@
  nav {
    background-color: rgb(61, 64, 64);
-   height: 75px;
+   height: 100px;
  }
 
  ul {
@@ -11,6 +11,13 @@
    padding: 5px;
    height: 65px;
    width: 65px;
+ }
+ .title-link {
+   color: rgb(103, 201,	203);
+ }
+
+ .home-page-title {
+   margin-left: 15px;
  }
 
  .videos {
@@ -307,6 +314,26 @@ section.login-new {
 .bookmark {
   margin-top: 10px;
 }
+
+.show-link {
+  color: rgb(103, 201,	203);
+}
+
+input#position {
+  height: 25px;
+  width: 30px;
+}
+
+div.title-bookmark {
+  display: flex;
+  justify-content: space-between;
+  width: 640px;
+}
+
+.bookmarks-btn {
+  margin-top: 17px;
+}
+
 
 #tag_cloud {
   .m {font-size: 1.2em; }

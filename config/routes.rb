@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       resources :tutorials, only:[:show, :index]
+      resources :videos, only:[:show]
     end
   end
 
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :tutorials, only: [:edit, :update, :destroy]
+    resources :videos, only: [:edit, :update, :destroy]
   end
 
   get '/login', to: "sessions#new"

@@ -4,4 +4,5 @@ class TutorialSerializer < ActiveModel::Serializer
   def videos
     object.videos
   end
+  
 end

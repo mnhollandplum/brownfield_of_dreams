@@ -10,7 +10,7 @@ export default class extends Controller {
 
   showDescription(event) {
     event.preventDefault();
-    fetch(`/api/v1/tutorials/${event.target.id}`)
+    fetch(`/api/v1/videos/${event.target.id}`)
       .then((response) => response.json())
       .then(function(response){
         const desc = document.querySelector(`#description-${event.target.id}`);

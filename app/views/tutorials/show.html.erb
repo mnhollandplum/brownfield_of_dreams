@@ -3,27 +3,28 @@
 <div class="col col-4">
   <h4>Videos</h4>
   <ul>
-    <% @presenter.videos.each.with_index(1) do |video, index| %>
-      <li><%= index %>. <%= link_to video.title, tutorial_path(video_id: video.id) %></li>
+    <% @presenter.videos.each do |video| %>
+      <li><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link" %></li>
+       <% if current_user != nil && current_user.admin? %>
+       <%= form_tag(admin_video_path(video), method: :put, id: "edit-position") do %>
+         <%= text_field_tag :position, params[:position], placeholder: video.position %>
+         <%= submit_tag "Edit"  %>
+         <% end %>
+       <% end %>
     <% end %>
   </ul>
 </div>
 
 <div class="col col-8">
-  <% if @current_vid == nil %>
+  <div class="title-bookmark">
     <h3><%= @presenter.current_video.title %></h3>
-  <% else %>
-    <h3><%= @current_vid.title %></h3>
-  <% end %>
-
-  <div class="bookmarks-btn">
-    <% if current_user && @current_vid == nil %>
-      <%= button_to "Add to Bookmarks", user_videos_path(video_id: @presenter.current_video.id, user_id: current_user.id), method: :post, class: "btn btn-outline mb1 blue" %>
-    <% elsif current_user && @current_vid != nil %>
-      <%= button_to "Add to Bookmarks", user_videos_path(video_id: @current_vid.id, user_id: current_user.id), method: :post, class: "btn btn-outline mb1 blue" %>
-    <% else %>
-      <%= link_to "Add to Bookmarks", login_path, class: "btn btn-outline mb1 blue" %>
-    <% end %>
+    <div class="bookmarks-btn">
+      <% if current_user %>
+      <%= button_to "Bookmark", user_videos_path(video_id: @presenter.current_video.id, user_id: current_user.id), method: :post, class: "btn btn-outline mb1 blue" %>
+      <% else %>
+      <%= link_to "Bookmark", login_path, class: "btn btn-outline mb1 teal" %>
+      <% end %>
+    </div>
   </div>
 
   <div id="player">
@@ -35,11 +36,7 @@
       player = new YT.Player('player', {
         width: '640',
         height: '390',
-        <% if @current_vid == nil %>
-          videoId: '<%= @presenter.current_video.video_id %>',
-        <% else %>
-          videoId: '<%= @current_vid.video_id%>',
-        <% end %>
+        videoId: '<%= @presenter.current_video.video_id %>',
         events: {
           onReady: onPlayerReady,
           onStateChange: onPlayerStateChange
@@ -55,7 +52,7 @@
     // when video ends
     function onPlayerStateChange(event) {
       if(event.data === 0) {
-        console.log('done');
+      // window.location ="/";
       }
     }
   </script>
@@ -64,7 +61,7 @@
   <h4>Description</h4>
   <p data-controller="tutorials" id="description-<%= @presenter.current_video.id %>">
     <%= @presenter.current_video.description.truncate(50) %>...
-    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.current_video.id%>
+    <%= link_to "More", "#", "data-action" => "click->tutorials#showDescription", id: @presenter.current_video.id, class: "show-link"%>
   </p>
 </div>
 
