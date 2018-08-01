@@ -13,4 +13,23 @@ class TutorialPresenter < SimpleDelegator
     end
   end
 
+  def next_video_position
+    current_video.position + 1
+  end
+
+  def next_video
+    vid = videos.find_by(position: next_video_position)
+    vid.id if vid
+  end
+
+  def position_array
+    videos.map do |vid|
+      vid.position
+    end
+  end
+
+  def play_video
+    position_array.length >= next_video_position
+  end
+
 end

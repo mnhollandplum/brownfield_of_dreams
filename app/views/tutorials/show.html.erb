@@ -1,15 +1,16 @@
 <main class="tutorials">
 <h2><%= @presenter.title %></h2>
+<h1 id="message"></h1>
 <div class="col col-4">
   <h4>Videos</h4>
   <ul>
     <% @presenter.videos.each do |video| %>
       <li>
-        <h3><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link" %></h3>
+        <h3><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link", id: video.position %></h3>
         <% if current_user != nil && current_user.admin? %>
-        <%= form_tag(admin_video_path(video), method: :put, id: "edit-position") do %>
-        <%= text_field_tag :position, params[:position], placeholder: video.position %>
-        <%= submit_tag "Edit", class: "btn btn-outline mb1 bg-red" %>
+          <%= form_tag(admin_video_path(video), method: :put, id: "edit-position") do %>
+          <%= text_field_tag :position, params[:position], placeholder: video.position %>
+          <%= submit_tag "Edit", class: "btn btn-outline mb1 bg-red" %>
           <% end %>
         <% end %>
       </li>
@@ -34,6 +35,7 @@
     <script>
     // create youtube player
     var player;
+    var position;
     function onYouTubePlayerAPIReady() {
       player = new YT.Player('player', {
         width: '640',
@@ -53,8 +55,11 @@
 
     // when video ends
     function onPlayerStateChange(event) {
-      if(event.data === 0) {
-      // window.location ="/";
+      if(event.data === 0 && <%= @presenter.play_video %>) {
+        window.location = "/tutorials/<%=@presenter.id%>?video_id=<%=@presenter.next_video%>";
+      } else if(event.data === 0 && <%= @presenter.play_video == false %>) {
+        const message = document.querySelector(`#message`);
+        message.innerHTML = "You watched them all. Bask in the glory of your new skills."
       }
     }
   </script>
