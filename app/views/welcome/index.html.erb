@@ -14,7 +14,7 @@
         <p class="description"><%= tutorial.description %></p> <br>
         <% if current_user != nil && current_user.admin?  %>
         <div class="edit-tutorial<%=tutorial.id %>">
-          <%= link_to 'Edit Tags', edit_admin_tutorial_path(tutorial), class: "btn btn-outline mb1 teal"  %>
+          <%= link_to 'Edit Tags', edit_admin_tutorial_path(tutorial), class: "btn btn-outline mb1 bg-red"  %>
         </div>
         <% end %>
       </div>

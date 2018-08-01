@@ -15,7 +15,7 @@
         <h3 class="dash-tutorial"><%= tutorial_name(video.tutorial_id) %>:</h3>
         <div class="dash-bookmark">
           <div class="bookmark dash-title">
-            <%= link_to video.title, tutorial_path(video.tutorial_id, video_id: video.id), class: "btn btn-outline mb1 blue"  %>
+            <%= link_to video.title, tutorial_path(video.tutorial_id, video_id: video.id), class: "btn btn-outline mb1 teal"  %>
           </div>
           <div class="bookmark bookmark-delete">
             <%= button_to 'Remove', user_video_path(video), method: :delete, class: "btn btn-outline mb1 red" %>

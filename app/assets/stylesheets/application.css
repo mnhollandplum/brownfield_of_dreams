@@ -320,8 +320,9 @@ section.login-new {
 }
 
 input#position {
-  height: 25px;
+  height: 36px;
   width: 30px;
+  margin-bottom: 6px;
 }
 
 div.title-bookmark {
@@ -330,8 +331,17 @@ div.title-bookmark {
   width: 640px;
 }
 
+form#edit-position {
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
 .bookmarks-btn {
   margin-top: 17px;
+}
+
+.title-list-item {
+  display: flex;
 }
 
 
