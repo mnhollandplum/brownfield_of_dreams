@@ -5,10 +5,7 @@ class Admin::VideosController < Admin::BaseController
 
   def update
     video = Video.find(params[:id])
-      if video.update(video_params)
-        flash[:success] = "Position Changed"
-      end
-    redirect_back(fallback_location: root_path)
+    video.update(video_params)
   end
 
   private
