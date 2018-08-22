@@ -19,9 +19,10 @@ bundle install
 ```
 Install node packages for stimulus
 ```js
-npm install
-    or
-yarn install
+
+brew install node
+brew install yarn
+yarn add stimulus
 ```
 Set up the database
  ```ruby 
@@ -38,6 +39,7 @@ This will import the videos from channel I created for this project. If you woul
 Faraday.get("https://www.googleapis.com/youtube/v3/playlists?key=#{ENV['YOUTUBE_API_KEY']}&part=snippet&channelId=UCwWA2R0g0x3UdEFSIKSDOmw&maxResults=50")
 ```
 with your own channel id from youtube.
+
 note: If you have more than 50 playlists in your channel the API call will only return a max of 50 playlists.
 
 Run the test suite
@@ -47,3 +49,10 @@ rspec
 note: the test suite is designed for the channel that I created for the project. The test suite will not account for some of the data from your personal YouTube channel.
 
 ## Technologies
+* [Stimulus](https://github.com/stimulusjs/stimulus)
+* [will_paginate](https://github.com/mislav/will_paginate)
+* [acts-as-taggable-on](https://github.com/mbleigh/acts-as-taggable-on)
+* [webpacker](https://github.com/rails/webpacker)
+* [vcr](https://github.com/vcr/vcr)
+* [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
+* [chromedriver-helper](http://chromedriver.chromium.org/)
