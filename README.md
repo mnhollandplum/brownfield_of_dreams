@@ -56,3 +56,7 @@ note: the test suite is designed for the channel that I created for the project.
 * [vcr](https://github.com/vcr/vcr)
 * [selenium-webdriver](https://www.seleniumhq.org/docs/03_webdriver.jsp)
 * [chromedriver-helper](http://chromedriver.chromium.org/)
+
+### Versions
+* Ruby 2.4.1
+* Rails 5.2.0
