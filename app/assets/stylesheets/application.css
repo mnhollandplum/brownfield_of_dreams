@@ -1,153 +1,126 @@
- nav {
-   background-color: rgb(61, 64, 64);
-   height: 150px;
- }
-
- ul {
-  list-style-type: none;
+/* NAV */
+nav.primary_nav {
+  background-color: #FFF;
+  height: 100px;
+  box-shadow: 0 0 3px #6d6e71;
 }
 
- img {
-   padding: 5px;
-   height: 65px;
-   width: 65px;
- }
+.inner-nav {
+  height: 100%;
+}
 
- .nav-link a {
-   color: white;
-   margin: .7em;
- }
+.logo img{
+  max-height: 70px;
+}
 
- .nav-link {
-   margin-top: 1.6em;
-   font-size: 30px;
- }
+.links {
+  height:100%;
+}
 
- .links {
-   text-align: right;
- }
+.links a {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #6d6e71;
+}
 
- .login {
-   text-align: right;
-   padding-right: 15px;
-   height:50px;
- }
+/* Title cards */
+.turing-title {
+  font-size: 65px;
+  padding-left: 15px;
+  height: 80px;
+}
 
- .turing-logo {
-   width: 150px;
-   height: 150px;
- }
+.turing-title p {
+  margin:0
+}
 
- .turing-logo img {
-   height: 125px;
-   width: 125px;
-   padding: 13px;
- }
+.title-link {
+  color: rgb(103, 201,	203);
+}
 
- .title-container {
-   color: white;
-   height: 150px;
-   width: 690px;
-   padding-top: 15px;
- }
+.home-page-title {
+  margin-left: 15px;
+}
 
- .turing-title {
-   font-size: 65px;
-   padding-left: 15px;
-   height: 80px;
- }
+.videos {
+  padding-left: 15px;
+}
 
- .turing-title p {
-   margin:0
- }
-
- .title-link {
-   color: rgb(103, 201,	203);
- }
-
- .home-page-title {
-   margin-left: 15px;
- }
-
- .videos {
-   padding-left: 15px;
- }
-
- .thumbnail {
-   padding: 5px;
-   height: 180px;
-   width: 200px;
-   border-radius: 10%;
- }
+.thumbnail {
+  padding: 5px;
+  height: 180px;
+  width: 200px;
+  border-radius: 10%;
+}
 
 
- .tutorial-description {
-   padding: 10px;
- }
+.tutorial-description {
+  padding: 10px;
+}
 
- .bar {
-   height: 40px;
-   background-color: rgb(238, 238, 238);
- }
+.bar {
+  height: 40px;
+  background-color: rgb(238, 238, 238);
+}
 
- .search-field {
-   padding: 2px;
- }
+.search-field {
+  padding: 2px;
+}
 
 
- .categories {
-   padding-left: 10px;
-   height: 550px;
-   width: 275px;
- }
+.categories {
+  padding-left: 10px;
+  height: 550px;
+  width: 275px;
+}
 
- .videos {
-   height: 1000px;
- }
+.videos {
+  height: 1000px;
+}
 
- .video {
-   margin-left: 10px;
-   height: 190px;
-   width: 1000px;
- }
+.video {
+  margin-left: 10px;
+  height: 190px;
+  width: 1000px;
+}
 
- .video-description p {
-   font-size: 12px;
- }
+.video-description p {
+  font-size: 12px;
+}
 
- .video-description {
-   height: 190px;
-   width: 550px;
- }
+.video-description {
+  height: 190px;
+  width: 550px;
+}
 
- .video-container{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 500px;
- }
+.video-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
 
- .video-view {
-   max-width: 50%;
- }
+.video-view {
+  max-width: 50%;
+}
 
- section.tutorials {
-   margin: auto;
-   width: 75%;
-   padding: 10px;
-   height:1500px;
- }
+section.tutorials {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:1500px;
+}
 
- .tutorial {
-   height: 200px;
- }
+.tutorial {
+  height: 200px;
+}
 
- .dashboard-main {
-   margin: auto;
-   width: 75%;
-   padding: 10px;
-   height:1000px;
- }
+.dashboard-main {
+  margin: auto;
+  width: 75%;
+  padding: 10px;
+  height:1000px;
+}
 
 h1, h2, h3, h4, h5, h6 {
   color: #3c4040;
@@ -169,12 +142,6 @@ h4 {
   font-weight: bold;
 }
 
-img {
-  padding: 5px;
-  height: 65px;
-  width: 65px;
-}
-
 .videos {
   padding-left: 15px;
 }
@@ -192,24 +159,6 @@ img {
 
 .search-field {
   padding: 2px;
-}
-
-.nav-link a {
-  color: white;
-  margin: .7em;
-}
-
-.nav-link {
-  margin-top: 1.3em;
-}
-
-.links {
-  text-align: right;
-}
-
-.login {
-  text-align: right;
-  padding-right: 10px;
 }
 
 .videos {
