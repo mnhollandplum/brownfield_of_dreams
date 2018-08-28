@@ -55,9 +55,9 @@
 
     // when video ends
     function onPlayerStateChange(event) {
-      if(event.data === 0 && <%= @presenter.play_video %>) {
-        window.location = "/tutorials/<%=@presenter.id%>?video_id=<%=@presenter.next_video%>";
-      } else if(event.data === 0 && <%= @presenter.play_video == false %>) {
+      if(event.data === 0 && <%= @presenter.play_next_video? %>) {
+        window.location = "/tutorials/<%=@presenter.id%>?video_id=<%=@presenter.next_video.id %>";
+      } else if(event.data === 0 && <%= @presenter.play_next_video? == false %>) {
         const message = document.querySelector(`#message`);
         message.innerHTML = "You watched them all. Bask in the glory of your new skills."
       }

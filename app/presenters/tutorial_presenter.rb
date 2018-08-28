@@ -1,5 +1,4 @@
 class TutorialPresenter < SimpleDelegator
-
   def initialize(tutorial, video_id = nil)
     super(tutorial)
     @video_id = video_id
@@ -13,23 +12,21 @@ class TutorialPresenter < SimpleDelegator
     end
   end
 
-  def next_video_position
-    current_video.position + 1
-  end
-
   def next_video
-    vid = videos.find_by(position: next_video_position)
-    vid.id if vid
+    videos[current_video_index + 1] || current_video
   end
 
-  def position_array
-    videos.map do |vid|
-      vid.position
-    end
+  def play_next_video?
+    !(current_video.position >= maximum_video_position)
   end
 
-  def play_video
-    position_array.length >= next_video_position
+  private
+
+  def current_video_index
+    videos.index(current_video)
   end
 
+  def maximum_video_position
+    videos.max_by { |video| video.position }.position
+  end
 end

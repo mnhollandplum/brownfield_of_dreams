@@ -39,7 +39,7 @@ describe 'User' do
 
     expect(current_path).to eq(root_path)
     expect(page).to_not have_content(user.first_name)
-    expect(page).to have_content('Sign In')
+    expect(page).to have_content('SIGN IN')
   end
 
   it 'is shown an error when incorrect info is entered', :js do
