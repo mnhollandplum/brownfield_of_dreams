@@ -1,22 +1,17 @@
 <div class="user-login">
-  <main>
-    <section class="login-new">
-      <%= form_for :session, url: login_path, class: "newclass" do |f| %>
+  <section>
+    <%= form_for :session, url: login_path do |f| %>
       <div>
         <%= f.label :email %>
-        <%= f.email_field :email %>
+        <%= f.email_field :email, class: "block col-12 field" %>
       </div>
       <div>
         <%= f.label :password %>
-        <%= f.password_field :password %>
+        <%= f.password_field :password, class: "block col-12 field" %>
       </div>
-    </section>
-    <div class="login-btns">
-      <div class="login-create">
-        <%= f.submit 'Log In', class: "btn btn-primary mb1 bg-teal" %>
-        <% end %>
-        <%= link_to 'Create Account', new_user_path, class: "btn btn-primary mb1 bg-teal" %>
-      </div>
-    </div>
-  </main>
+      <%= f.submit 'Log In', class: "mt2 btn btn-primary mb1 bg-teal" %>
+    <% end %>
+  </section>
+
+  <p>Don't have an account? <%= link_to 'Sign up now.', new_user_path %></p>
 </div>
