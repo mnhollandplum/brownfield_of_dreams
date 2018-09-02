@@ -1,0 +1,8 @@
+<h1>Admin Dashboard</h1>
+
+<h3>Tutorials</h3>
+<% @presenter.tutorials.each do |tutorial| %>
+  <div class="admin-tutorial-card">
+    <%= link_to tutorial.title, edit_admin_tutorial_path(tutorial) %>
+  </div>
+<% end %>

@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'welcome#index', as: :tag
 
   namespace :admin do
+    get "/dashboard", to: "dashboard#show"
     resources :tutorials, only: [:edit, :update, :destroy]
     resources :videos, only: [:edit, :update, :destroy]
   end
