@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-describe 'vister can create an account' do
-  it ' visits the home page', :js do
+describe 'vister can create an account', :js do
+  it ' visits the home page' do
     email = 'jimbob@aol.com'
     first_name = 'Jim'
     last_name = 'Bob'
@@ -14,7 +14,7 @@ describe 'vister can create an account' do
 
     expect(current_path).to eq(login_path)
 
-    click_on 'Create Account'
+    click_on 'Sign up now.'
 
     expect(current_path).to eq(new_user_path)
 
