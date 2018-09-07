@@ -21,13 +21,6 @@
   padding-left: 15px;
 }
 
-.thumbnail {
-  padding: 5px;
-  height: 180px;
-  width: 200px;
-  border-radius: 10%;
-}
-
 
 .tutorial-description {
   padding: 10px;
@@ -101,6 +94,12 @@ h1, h2, h3, h4, h5, h6 {
   color: #3c4040;
 }
 
+h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  font-size: 200%;
+}
+
 h2 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
@@ -115,6 +114,7 @@ h3 {
 h4 {
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
+  font-size: 125%;
 }
 
 .videos {
@@ -122,9 +122,7 @@ h4 {
 }
 
 .thumbnail {
-  padding: 5px;
-  height: 180px;
-  width: 200px;
+  max-height: 180px;
 }
 
 .bar {

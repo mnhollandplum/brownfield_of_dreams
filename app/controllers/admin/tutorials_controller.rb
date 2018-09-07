@@ -8,7 +8,7 @@ class Admin::TutorialsController < Admin::BaseController
     if tutorial.update(tutorial_params)
       flash[:success] = "#{tutorial.title} tagged!"
     end
-    redirect_to root_path
+    redirect_to edit_admin_tutorial_path(tutorial)
   end
 
   private

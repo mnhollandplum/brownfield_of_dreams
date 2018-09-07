@@ -1,8 +1,14 @@
 <h1>Admin Dashboard</h1>
-
 <h3>Tutorials</h3>
+<table class="col col-4">
+  <tr>
+    <th>Title</th>
+    <th>Actions</th>
+  </tr>
 <% @presenter.tutorials.each do |tutorial| %>
-  <div class="admin-tutorial-card">
-    <%= link_to tutorial.title, edit_admin_tutorial_path(tutorial) %>
-  </div>
+  <tr class="admin-tutorial-card">
+    <td><%= link_to tutorial.title, tutorial_path(tutorial) %></td>
+    <td><%= link_to "Edit", edit_admin_tutorial_path(tutorial) %>
+  </tr>
 <% end %>
+</table>

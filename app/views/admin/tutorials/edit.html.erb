@@ -1,11 +1,43 @@
-<div class="tag-field">
+<h1><%= @tutorial.title %></h1>
+<section class="col col-4 p3 border">
+  <h4>Videos (<%= @tutorial.videos.count %>)</h4>
+  <p>Drag and drop to sort. Don't forget to save.</p>
+  <div>
+    <%= link_to "Save Video Order", "#", class: "video-position-submit btn btn-outline" %>
+  </div>
 
-<%= form_for [:admin, @tutorial] do |f| %>
+  <div id="video-list">
+    <% @tutorial.videos.each do |video| %>
+      <div data-id="<%= video.position %>" class="border rounded mt2 p1">
+        <%= link_to video.title, tutorial_path(@tutorial, video_id: video.id) %><br>
+        <img class="thumbnail" src= <%="#{video.thumbnail}" %> >
+      </div>
+    <% end %>
+  </div>
+</section>
 
-<%= f.label :tag_list, "Tags (separted by commas)" %>
-<%= f.text_field :tag_list %>
 
-<%= f.submit %>
-<% end %>
+<section class="col col-4 p3 ml2 border">
+  <h4>Tags</h4>
 
-</div>
+  <ul>
+  <% @tutorial.tags.each do |tag| %>
+    <li><%= tag.name %></li>
+  <% end %>
+  </ul>
+
+  <div class="tag-field">
+    <%= form_for [:admin, @tutorial] do |f| %>
+      <%= f.label :tag_list, "Separted by commas", class: "block" %>
+      <%= f.text_field :tag_list, class: "field block" %><br>
+      <%= f.submit "Update Tags", class: "video-position-submit btn btn-outline" %>
+    <% end %>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@1.6.1/Sortable.min.js"></script>
+
+<script>
+  var el = document.getElementById('video-list');
+  var sortable = Sortable.create(el);
+</script>
