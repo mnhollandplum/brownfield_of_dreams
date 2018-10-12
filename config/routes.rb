@@ -11,8 +11,16 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get "/dashboard", to: "dashboard#show"
-    resources :tutorials, only: [:edit, :update, :destroy]
+    resources :tutorials, only: [:create, :edit, :update, :destroy, :new] do
+      resources :videos, only: [:create]
+    end
     resources :videos, only: [:edit, :update, :destroy]
+
+    namespace :api do
+      namespace :v1 do
+        put "tutorial_sequencer/:tutorial_id", to: "tutorial_sequencer#update"
+      end
+    end
   end
 
   get '/login', to: "sessions#new"
@@ -23,7 +31,8 @@ Rails.application.routes.draw do
   get '/about', to: 'about#show'
   get '/get_started', to: 'get_started#show'
 
-  get '/video' ,to: 'video#show'
+  # Is this being used?
+  get '/video', to: 'video#show'
 
   resources :users, only: [:new, :create, :update, :edit]
 

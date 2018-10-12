@@ -1,14 +1,24 @@
 <h1>Admin Dashboard</h1>
 <h3>Tutorials</h3>
-<table class="col col-4">
+
+<div class="p2">
+  <%= link_to "New Tutorial", new_admin_tutorial_path, class: "video-position-submit btn btn-outline" %>
+</div>
+
+<table class="col col-5">
   <tr>
     <th>Title</th>
     <th>Actions</th>
   </tr>
-<% @presenter.tutorials.each do |tutorial| %>
-  <tr class="admin-tutorial-card">
-    <td><%= link_to tutorial.title, tutorial_path(tutorial) %></td>
-    <td><%= link_to "Edit", edit_admin_tutorial_path(tutorial) %>
-  </tr>
-<% end %>
+  <% @presenter.tutorials.each do |tutorial| %>
+    <tr class="admin-tutorial-card">
+      <td><%= link_to tutorial.title, tutorial_path(tutorial) %></td>
+      <td>
+        <%= link_to "Edit", edit_admin_tutorial_path(tutorial) %> |
+        <%= link_to 'Destroy', tutorial_path(tutorial),
+                               method: :delete,
+                               data: { confirm: 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
 </table>
