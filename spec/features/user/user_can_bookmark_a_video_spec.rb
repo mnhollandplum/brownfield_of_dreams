@@ -15,7 +15,7 @@ describe 'A registered user' do
     expect(page).to have_content("Bookmark added to your dashboard")
     expect(user.videos.last.title).to eq(video.title)
 
-    click_on user.first_name
+    click_on "Profile"
 
     expect(current_path).to eq(dashboard_path)
 
@@ -52,7 +52,7 @@ describe 'A registered user' do
     expect(page).to have_content("Bookmark added to your dashboard")
     expect(user.videos.last.title).to eq(video.title)
 
-    click_on user.first_name
+    click_on "Profile"
 
     expect(current_path).to eq(dashboard_path)
 

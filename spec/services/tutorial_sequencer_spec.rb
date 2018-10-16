@@ -18,10 +18,9 @@ describe TutorialSequencer do
         sequence = [vid_3.id, vid_1.id, vid_2.id]
         tutorial_sequencer = TutorialSequencer.new(tutorial, sequence)
 
-        expect(vid_1).to receive(:update).with(position: 2).once
         tutorial_sequencer.run!
 
-        expect(vid_1.reload.position).position).to eq(2)
+        expect(vid_1.reload.position).to eq(2)
         expect(vid_2.reload.position).to eq(3)
         expect(vid_3.reload.position).to eq(1)
       end

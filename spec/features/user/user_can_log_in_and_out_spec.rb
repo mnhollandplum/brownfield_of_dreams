@@ -31,7 +31,7 @@ describe 'User' do
 
     click_on 'Log In'
 
-    click_on user.first_name
+    click_on 'Profile'
 
     expect(current_path).to eq(dashboard_path)
 
