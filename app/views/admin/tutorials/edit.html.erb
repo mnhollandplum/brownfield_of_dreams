@@ -4,10 +4,10 @@
   <p>Drag and drop to sort. Don't forget to save.</p>
   <div data-controller="tutorials">
     <%= link_to "Save Video Order", "#", "data-action" => "click->tutorials#updateOrder", class: "video-position-submit btn btn-outline", id: @tutorial.id %>
-    <%= link_to "+ Add Video", "#", "data-action" => "click->tutorials#updateOrder", class: "video-position-submit btn btn-outline", id: @tutorial.id %>
+    <%= link_to "+ Add Video", "#", "data-action" => "click->tutorials#showVideoForm", class: "video-position-submit btn btn-outline", id: @tutorial.id %>
   </div>
 
-  <div class="mt1">
+  <div class="mt1" id="new-video-form">
     <h3>New Video</h3>
     <%= form_for [:admin, @tutorial, Video.new] do |f| %>
       <%= f.label :title, class: "block" %>
