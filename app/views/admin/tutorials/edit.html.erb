@@ -4,7 +4,7 @@
   <p>Drag and drop to sort. Don't forget to save.</p>
   <div data-controller="tutorials">
     <%= link_to "Save Video Order", "#", "data-action" => "click->tutorials#updateOrder", class: "video-position-submit btn btn-outline", id: @tutorial.id %>
-    <%= link_to "+ Add Video", "#", "data-action" => "click->tutorials#showVideoForm", class: "video-position-submit btn btn-outline", id: @tutorial.id %>
+    <%= link_to "Add Video", "#", "data-action" => "click->tutorials#showVideoForm", class: "video-position-submit btn btn-outline", id: @tutorial.id %>
   </div>
 
   <div class="mt1" id="new-video-form">
@@ -23,7 +23,7 @@
 
   <div id="video-list">
     <% @tutorial.videos.each do |video| %>
-      <div data-id="<%= video.id %>" class="border rounded mt2 p1">
+      <div class="video" data-id="<%= video.id %>" class="border rounded mt2 p1">
         <%= link_to video.title, tutorial_path(@tutorial, video_id: video.id) %><br>
         <img class="thumbnail" src= <%="#{video.thumbnail}" %> >
       </div>

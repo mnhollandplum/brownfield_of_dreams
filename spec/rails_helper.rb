@@ -6,13 +6,16 @@ require File.expand_path('../../config/environment', __FILE__)
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
 require 'vcr'
-require 'webmock'
+require 'webmock/rspec'
 
 VCR.configure do |config|
+  config.ignore_localhost = true
   config.cassette_library_dir = 'spec/cassettes'
   config.hook_into :webmock
-  config.allow_http_connections_when_no_cassette = true
+  config.configure_rspec_metadata!
+  config.filter_sensitive_data("<YOUTUBE_API_KEY>") { ENV['YOUTUBE_API_KEY'] }
 end
+
 
 ActiveRecord::Migration.maintain_test_schema!
 
@@ -36,7 +39,6 @@ Shoulda::Matchers.configure do |config|
 end
 
 RSpec.configure do |config|
-
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   config.include FactoryBot::Syntax::Methods
