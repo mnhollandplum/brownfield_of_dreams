@@ -1,4 +1,5 @@
 # Turing Tutorials
+
 Deployed link: https://turing-tutorials.herokuapp.com/
 
 This is a Ruby on Rails application that pulls in YouTube channel information from the YouTube API. The application is split between tutorials and segments. Each tutorial is a playlist from the YouTube channel used to seed the database, and each segment is a video within playlist. Within the application an admin is able to create tags for each tutorial in the database. A visitor or registered user can then filter tutorials based on these tags inserted by an Admin.
