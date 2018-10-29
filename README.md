@@ -42,7 +42,7 @@ with your own channel id from youtube.
 
 note: If you have more than 50 playlists in your channel the API call will only return a max of 50 playlists.
 
-Run the test suite
+Run the test suite:
 ```ruby
 rspec
 ```
