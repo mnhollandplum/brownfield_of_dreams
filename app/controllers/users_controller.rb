@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @user = current_user
-    @videos = current_user.videos
   end
 
   def new

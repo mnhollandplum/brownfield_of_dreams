@@ -1,6 +1,7 @@
 <section class="dashboard-main">
   <h1> <%= current_user.first_name %>'s Dashboard </h1>
 
+  <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %>
   <h3>Account Details</h3>
   <ul>
     <li> <%= current_user.first_name  %> <%= current_user.last_name %> </li>
@@ -8,23 +9,5 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
-    <hr>
-    <% @videos.each do |video| %>
-    <ul>
-      <li class="segment-<%= video.id %>" >
-        <h3 class="dash-tutorial"><%= tutorial_name(video.tutorial_id) %>:</h3>
-        <div class="dash-bookmark">
-          <div class="bookmark dash-title">
-            <%= link_to video.title, tutorial_path(video.tutorial_id, video_id: video.id), class: "btn btn-outline mb1 teal"  %>
-          </div>
-          <div class="bookmark bookmark-delete">
-            <%= button_to 'Remove', user_video_path(video), method: :delete, class: "btn btn-outline mb1 red" %>
-          </div>
-        </div>
-      </li>
-    </ul>
-    <% end %>
   </section>
-  <hr>
-  <h3> <%= button_to 'Log Out', logout_path, method: 'delete', class: "btn btn-primary mb1 bg-teal" %> </h3>
 </section>
