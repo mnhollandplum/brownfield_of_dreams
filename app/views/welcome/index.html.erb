@@ -23,11 +23,7 @@
   <hr>
   <div class="tags">
     <% tag_cloud Tutorial.tag_counts, %w[.m] do |tag, css_class| %>
-      <ul>
-        <li>
-          <%= link_to tag.name, tag_path(tag.name), class: "btn btn-primary mb1 bg-teal"  %>
-        </li>
-      </ul>
+      <%= link_to tag.name, tag_path(tag.name), class: "btn btn-primary mb1 bg-teal"  %>
     <% end %>
   </div>
   <hr>
