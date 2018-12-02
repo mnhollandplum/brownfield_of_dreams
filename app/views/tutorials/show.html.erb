@@ -7,12 +7,6 @@
     <% @presenter.videos.each do |video| %>
       <li>
         <h3><%= link_to video.title, tutorial_path(video_id: video.id), class: "show-link", id: video.position %></h3>
-        <% if current_user != nil && current_user.admin? %>
-          <%= form_tag(admin_video_path(video), method: :put, id: "edit-position") do %>
-          <%= text_field_tag :position, params[:position], placeholder: video.position %>
-          <%= submit_tag "Edit", class: "btn btn-outline mb1 bg-red" %>
-          <% end %>
-        <% end %>
       </li>
     <% end %>
   </ul>
