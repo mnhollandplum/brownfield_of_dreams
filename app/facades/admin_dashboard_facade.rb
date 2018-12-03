@@ -1,4 +1,4 @@
-class AdminDashboardPresenter
+class AdminDashboardFacade
   def tutorials
     Tutorial.all
   end
