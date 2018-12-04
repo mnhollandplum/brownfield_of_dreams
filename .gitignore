@@ -16,7 +16,7 @@
 # Ignore uploaded files in development
 /storage/*
 /coverage
-public/packs/manifest.json
+/public/packs/manifest.json
 
 /node_modules
 /yarn-error.log
