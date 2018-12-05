@@ -28,7 +28,7 @@ class GithubService
 
   def target_options
     {
-      repo: "user/repos"
+      repos: "user/repos"
     }
   end
 end
