@@ -1,0 +1,11 @@
+
+<% if @github_repos %>
+  <div class="github-repos">
+    <h1>Github Repositories</h1>
+    <% @github_repos.list_repos(5).each do |repo| %>
+      <ul class="repo-list">
+        <li><%= link_to "#{repo.name}", repo.link, method: :get %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>

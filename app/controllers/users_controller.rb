@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
   def show
+    current_user
+    github_filter = { user: @current_user }
+    @github_repos = GithubRepoFacade.new(github_filter)
   end
 
   def new
