@@ -1,0 +1,10 @@
+<% if @dashboard_facade.github_user %>
+  <div class="github-repos">
+    <%@dashboard_facade.list_repos.each do |repo|%>
+      <ul>
+        <li> <%=link_to "#{repo.name}", repo.url, method: :get%> </li>
+      </ul>
+    <%end%>
+  </div>
+  
+<%end%>
