@@ -1,9 +1,9 @@
-<% if @dashboard_facade.github_user %>
-  <div class="github-followers">
-    <%@dashboard_facade.list_followers.each do |follower|%>
-      <ul>
-        <li> <%=link_to "#{follower.login}", follower.url, method: :get%> </li>
-      </ul>
-    <%end%>
-  </div>
-<%end%>
+<div class="github-followers">
+  <h3>Followers</h3>
+  <%= "No followers" if @dashboard_facade.list_following.count == 0 %>
+  <% @dashboard_facade.list_followers.each do |follower| %>
+    <ul>
+      <li> <%=link_to "#{follower.login}", follower.url, method: :get%> </li>
+    </ul>
+  <%end%>
+</div>
