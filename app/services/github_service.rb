@@ -31,7 +31,8 @@ class GithubService
   def target_options
     {
       repos:     "user/repos",
-      followers: "user/followers"
+      followers: "user/followers",
+      following: "/user/following"
     }
   end
 end

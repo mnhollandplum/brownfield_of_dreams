@@ -21,6 +21,12 @@ class GithubUserFacade
     end
   end
 
+  def make_following
+    @followings ||= get_following.map do |following|
+      GithubPublicUser.new(following)
+    end
+  end
+
 
   private
 
@@ -32,6 +38,12 @@ class GithubUserFacade
 
   def get_followers
     request = { target: :followers}
+    request[:token] = @token
+    GithubService.new(request).target_data
+  end
+
+  def get_following
+    request = { target: :following}
     request[:token] = @token
     GithubService.new(request).target_data
   end

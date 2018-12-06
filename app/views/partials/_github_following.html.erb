@@ -1,0 +1,9 @@
+<% if @dashboard_facade.github_user %>
+  <div class="github-following">
+    <%@dashboard_facade.list_following.each do |following|%>
+      <ul>
+        <li> <%=link_to "#{following.login}", following.url, method: :get%> </li>
+      </ul>
+    <%end%>
+  </div>
+<%end%>

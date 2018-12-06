@@ -17,4 +17,8 @@ class DashboardFacade
     github_user.make_followers.first(5)
   end
 
+  def list_following
+    github_user.make_following.first(5)
+  end
+
 end
