@@ -10,16 +10,23 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
+
   <section>
-    <h1>Github Repositories</h1>
-  <%= render partial: 'partials/github_repos' %>
-  </section>
-  <section>
-    <h1>Github Followers</h1>
-  <%= render partial: 'partials/github_followers' %>
-  </section>
-  <section>
-    <h1>Github Following</h1>
-  <%= render partial: 'partials/github_following' %>
+    <h1>Github</h1>
+
+    <section>
+      <h3>Repositories</h3>
+      <%= render partial: 'partials/github_repos' %>
+    </section>
+
+    <section>
+      <h3>Followers</h3>
+      <%= render partial: 'partials/github_followers' %>
+    </section>
+
+    <section>
+      <h3>Following</h3>
+      <%= render partial: 'partials/github_following' %>
+    </section>
   </section>
 </section>
