@@ -27,7 +27,6 @@ class GithubUserFacade
     end
   end
 
-
   private
 
   def get_repos

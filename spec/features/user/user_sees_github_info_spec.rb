@@ -7,8 +7,8 @@ describe 'User' do
       stub_user_followers_api_requests
       stub_user_following_api_requests
     end
-        it 'user can see github repos in' do
-        user =  User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password", github_token: ENV["github_user_token"])
+        it 'user can see github information in' do
+        user = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password", github_token: ENV["github_user_token"])
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
         visit dashboard_path
@@ -17,7 +17,12 @@ describe 'User' do
         expect(page).to have_content(user.last_name)
 
         expect(page).to have_content("Github")
+        expect(page).to have_content("Repositories")
+        expect(page).to have_content("Following")
+        expect(page).to have_content("Followers")
         expect(page).to have_css(".github-repos li", count: 5)
+        expect(page).to have_css(".github-following li", minimum: 2)
+        expect(page).to have_css(".github-followers li", minimum: 2)
       end
   end
   describe 'Non-Github User' do
@@ -33,6 +38,8 @@ describe 'User' do
   		expect(page).to have_content(no_github.last_name)
 
   		expect(page).to_not have_content("Repositories")
+      expect(page).to_not have_content("Following")
+      expect(page).to_not have_content("Followers")
   		expect(page).to_not have_content("Github")
     end
   end

@@ -16,11 +16,11 @@ class DashboardFacade
   end
 
   def list_followers
-    github_user.make_followers.first(5)
+    github_user.make_followers
   end
 
   def list_following
-    github_user.make_following.first(5)
+    github_user.make_following
   end
 
 end
