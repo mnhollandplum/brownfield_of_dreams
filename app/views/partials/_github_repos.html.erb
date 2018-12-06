@@ -1,4 +1,6 @@
+
 <% if @dashboard_facade.github_user %>
+<h1>Github Repositories</h1>
   <div class="github-repos">
     <%@dashboard_facade.list_repos.each do |repo|%>
     <div class="user_repos">
