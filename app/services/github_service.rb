@@ -5,7 +5,6 @@ class GithubService
   end
 
   def target_data
-    # binding.pry
     get_json(target)
   end
 
@@ -26,7 +25,6 @@ class GithubService
   end
 
   def target
-    # binding.pry
    target_options[@filter[:target]]
   end
 

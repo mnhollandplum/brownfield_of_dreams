@@ -16,7 +16,6 @@ class GithubUserFacade
   end
 
   def make_followers
-    # binding.pry
     @followers ||= get_followers.map do |follower|
       GithubPublicUser.new(follower)
     end
