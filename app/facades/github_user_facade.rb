@@ -1,5 +1,8 @@
 require "./app/models/poros/github_repo"
+require "./app/models/poros/github_public_user"
+
 require "./app/services/github_service"
+
 class GithubUserFacade
 
   def initialize(token)
@@ -12,9 +15,30 @@ class GithubUserFacade
     end
   end
 
-  def get_repos
-    user_repos = { target: :repos}
-    user_repos[:token] = @token
-    GithubService.new(user_repos).target_data
+  def make_followers
+    # binding.pry
+    @followers ||= get_followers.map do |follower|
+      GithubPublicUser.new(follower)
+    end
   end
+
+
+  private
+
+  def get_repos
+    request = { target: :repos}
+    request[:token] = @token
+    GithubService.new(request).target_data
+  end
+
+  def get_followers
+    request = { target: :followers}
+    request[:token] = @token
+    GithubService.new(request).target_data
+  end
+
+
+
+
+
 end

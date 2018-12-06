@@ -5,8 +5,11 @@ class GithubService
   end
 
   def target_data
+    # binding.pry
     get_json(target)
   end
+
+
 
   private
 
@@ -23,12 +26,14 @@ class GithubService
   end
 
   def target
+    # binding.pry
    target_options[@filter[:target]]
   end
 
   def target_options
     {
-      repos: "user/repos"
+      repos:     "user/repos",
+      followers: "user/followers"
     }
   end
 end
