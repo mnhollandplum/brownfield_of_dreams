@@ -1,0 +1,9 @@
+<div class="github-repos">
+<h3>Repositories</h3>
+  <%= "No Repositories" if @dashboard_facade.list_repos.count == 0 %>
+  <% @dashboard_facade.list_repos.each do |repo| %>
+    <ul>
+      <li> <%=link_to "#{repo.name}", repo.url, method: :get%> </li>
+    </ul>
+  <%end%>
+</div>

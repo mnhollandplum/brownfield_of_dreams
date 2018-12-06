@@ -49,3 +49,18 @@ RSpec.configure do |config|
 
   config.filter_rails_from_backtrace!
 end
+
+def stub_user_repo_api_requests
+  stub_request(:get, "https://api.github.com/user/repos").
+    to_return(body: File.read("./spec/fixtures/github_user_response.json"))
+end
+
+def stub_user_followers_api_requests
+  stub_request(:get, "https://api.github.com/user/followers").
+    to_return(body: File.read("./spec/fixtures/github_followers_response.json"))
+end
+
+def stub_user_following_api_requests
+  stub_request(:get, "https://api.github.com/user/following").
+    to_return(body: File.read("./spec/fixtures/github_following_response.json"))
+end
