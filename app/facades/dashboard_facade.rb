@@ -5,7 +5,7 @@ class DashboardFacade
   end
 
   def github_user
-    @github_user ||= GithubUserFacade.new(@user)
+    @github_user ||= GithubUserFacade.new(@user.github_token)
   end
 
   def list_repos
