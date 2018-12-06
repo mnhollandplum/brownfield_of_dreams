@@ -1,12 +1,10 @@
 
-<% if @dashboard_facade.github_user %>
-<h1>Github Repositories</h1>
-  <div class="github-repos">
-    <%@dashboard_facade.list_repos.each do |repo|%>
-    <div class="user_repos">
-      <ul>
-        <li> <%=link_to "#{repo.name}", repo.url, method: :get%> </li>
-      </ul>
-    <%end%>
-  </div>
-<%end%>
+<h3>Repositories</h3>
+<%= "No Repositories" if @dashboard_facade.list_following.count == 0 %>
+<div class="github-repos">
+  <% @dashboard_facade.list_repos.each do |repo| %>
+    <ul>
+      <li> <%=link_to "#{repo.name}", repo.url, method: :get%> </li>
+    </ul>
+  <%end%>
+</div>

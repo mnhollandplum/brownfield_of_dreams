@@ -7,7 +7,9 @@ describe 'vister can create an account', :js do
     last_name = 'Bob'
     password = 'password'
     password_confirmation = 'password'
-    stub_user_api_requests
+    stub_user_repo_api_requests
+    stub_user_followers_api_requests
+    stub_user_following_api_requests
 
     visit '/'
 

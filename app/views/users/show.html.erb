@@ -10,8 +10,15 @@
   <section>
     <h1>Bookmarked Segments</h1>
   </section>
-  <section>
 
-  <%= render partial: 'partials/github_repos' %>
+  <section>
+    <h1>Github</h1>
+    <% if @dashboard_facade.github_user %>
+      <section><%= render partial: 'partials/github_repos' %></section>
+      <section><%= render partial: 'partials/github_followers' %></section>
+      <section><%= render partial: 'partials/github_following' %></section>
+    <% else %>
+      <!-- < %= link_to "Add Github" github_auth_url % > -->
+    <% end %>
   </section>
 </section>

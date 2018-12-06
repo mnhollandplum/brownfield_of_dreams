@@ -8,6 +8,8 @@ class GithubService
     get_json(target)
   end
 
+
+
   private
 
   def get_json(url)
@@ -28,7 +30,9 @@ class GithubService
 
   def target_options
     {
-      repos: "user/repos"
+      repos:     "user/repos",
+      followers: "user/followers",
+      following: "/user/following"
     }
   end
 end

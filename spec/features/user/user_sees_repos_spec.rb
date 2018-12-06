@@ -2,7 +2,9 @@ require 'rails_helper'
 
 describe 'User' do
   before(:each) do
-    stub_user_api_requests
+    stub_user_repo_api_requests
+    stub_user_followers_api_requests
+    stub_user_following_api_requests
   end
 
     VCR.use_cassette("github_token") do
