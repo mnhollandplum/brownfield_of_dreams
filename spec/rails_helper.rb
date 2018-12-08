@@ -7,6 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
+require 'omniauth-github'
 
 VCR.configure do |config|
   config.ignore_localhost = true
@@ -63,4 +64,15 @@ end
 def stub_user_following_api_requests
   stub_request(:get, "https://api.github.com/user/following").
     to_return(body: File.read("./spec/fixtures/github_following_response.json"))
+end
+
+def stub_user_github_omniauth
+  OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:github] = {
+  provider: 'github',
+  info: {
+    name: 'first last',
+    email: 'email@email.com'
+  }
+}
 end
