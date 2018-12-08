@@ -23,7 +23,7 @@ class GithubController < ApplicationController
     hash = JSON.parse(oauth_response.body)
 
     current_user.github_token = token
-    current_user.save
+    test = current_user.save(:validate => false)
 
     redirect_to dashboard_path
 
