@@ -12,15 +12,13 @@
   </section>
 
   <section>
-
-    <% if @dashboard_facade.github_user%>
     <h1>Github</h1>
+    <% if @dashboard_facade.github_user%>
       <section><%= render partial: 'partials/github_repos' %></section>
       <section><%= render partial: 'partials/github_followers' %></section>
       <section><%= render partial: 'partials/github_following' %></section>
     <% else %>
-    no
-      <!-- < %= link_to "Add Github" github_auth_url % > -->
+      <%= link_to "Add Github",  "https://github.com/login/oauth/authorize?client_id=#{ENV['github_client_id']}&client_secret=#{ENV['github_client_secret']}", method: :get %>
     <% end %>
   </section>
 </section>
