@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   # get '/login/oauth/authorize' => redirect("http://github.com/login/oauth/authorize"), as: "github_login"
 
   get '/auth/github/callback', to: "github#create", as: "github_callback"
-  get 'connect', to: redirect('/login/oauth/authorize'), as: 'connect'
+  # get 'connect', to: redirect('/login/oauth/authorize'), as: 'connect'
 
   get '/login', to: "sessions#new"
   post '/login', to: "sessions#create"
