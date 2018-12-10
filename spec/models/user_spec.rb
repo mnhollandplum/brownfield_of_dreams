@@ -5,7 +5,12 @@ RSpec.describe User, type: :model do
     it {should validate_presence_of(:email)}
     it {should validate_presence_of(:first_name)}
     it {should validate_presence_of(:password)}
-    it {should_not validate_presence_of(:github_token)}
+  end
+
+  describe "Relationships" do
+    it { should have_many :user_videos }
+    it { should have_many :videos }
+    it { should have_one  :github }
   end
 
   describe 'roles' do
@@ -23,4 +28,26 @@ RSpec.describe User, type: :model do
       expect(admin.admin?).to be_truthy
     end
   end
+
+  describe "Github delegated methods" do
+
+    before(:each) do
+      @user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+      @github = Github.create(user: @user, username: 'username', token: "faketoken123", u_id: "123")
+    end
+
+
+    it "should have github_token" do
+      expect(@user.github_token).to eq(@github.token)
+    end
+    it "should have github_u_id" do
+      expect(@user.github_u_id).to eq(@github.u_id)
+    end
+    it "should have github_username" do
+      expect(@user.github_username).to eq(@github.username)
+    end
+
+  end
+
+
 end
