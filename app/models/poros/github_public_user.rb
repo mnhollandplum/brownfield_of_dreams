@@ -1,4 +1,6 @@
+
 class GithubPublicUser
+
   def initialize(filter)
     @filter = filter
   end
@@ -10,4 +12,14 @@ class GithubPublicUser
   def url
     @filter[:html_url]
   end
+
+  def is_member?
+    u_id   = @filter[:id]
+    member = GithubAccount.find_by_github_id(u_id)
+    return !!member
+  end
+
+
+
+
 end
