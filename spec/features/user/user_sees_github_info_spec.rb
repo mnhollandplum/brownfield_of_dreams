@@ -8,7 +8,7 @@ describe 'User' do
       stub_user_following_api_requests
     end
         it 'user can see github information in' do
-        user = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
+        user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
         github = Github.create!(user: user, username: "username", u_id: "123", token: ENV["github_user_token"])
         allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
