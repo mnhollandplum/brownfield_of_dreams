@@ -4,9 +4,10 @@
   <% @dashboard_facade.list_followers.each do |follower| %>
     <ul>
       <li> <%=link_to "#{follower.login}", follower.url, method: :get%> </li>
-      <!-- if  follower id in github table, link_to add friend -->
-      <% if follower.is_member? %>
-        < %= link_to "Add Friend", _____, method: :post  ?? %>
+      <!-- < % if follower.is_member? %> -->
+      <% if member = follower.is_member %>
+        <!-- < %= link_to "Add Friend", _____, method: :post  ?? %> -->
+        <%= button_to "Add Friend", add_friend_path( friend_id: member.user_id )
       <% end %>
     </ul>
   <%end%>

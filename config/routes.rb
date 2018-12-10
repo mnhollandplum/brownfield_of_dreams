@@ -24,14 +24,15 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/auth/github/callback', to: "github#create", as: "github_callback"
+  get  '/auth/github/callback', to: "github#create",  as: "github_callback"
+  post '/add_friend',           to: "friends#create", as: "add_friend"
 
-  get '/login', to: "sessions#new"
-  post '/login', to: "sessions#create"
+  get    '/login',  to: "sessions#new"
+  post   '/login',  to: "sessions#create"
   delete '/logout', to: "sessions#destroy"
 
-  get '/dashboard', to: 'users#show'
-  get '/about', to: 'about#show'
+  get '/dashboard',   to: 'users#show'
+  get '/about',       to: 'about#show'
   get '/get_started', to: 'get_started#show'
 
   # Is this being used?

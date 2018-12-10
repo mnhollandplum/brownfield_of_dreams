@@ -19,6 +19,10 @@ class GithubPublicUser
     return !!member
   end
 
+  def github_id
+    @filter[:id]
+  end
+
 
 
 
