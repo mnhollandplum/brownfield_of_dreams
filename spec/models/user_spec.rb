@@ -10,7 +10,7 @@ RSpec.describe User, type: :model do
   describe "Relationships" do
     it { should have_many :user_videos }
     it { should have_many :videos }
-    it { should have_one :github }
+    it { should have_one  :github }
   end
 
   describe 'roles' do
@@ -39,6 +39,12 @@ RSpec.describe User, type: :model do
 
     it "should have github_token" do
       expect(@user.github_token).to eq(@github.token)
+    end
+    it "should have github_u_id" do
+      expect(@user.github_u_id).to eq(@github.u_id)
+    end
+    it "should have github_username" do
+      expect(@user.github_username).to eq(@github.username)
     end
 
   end
