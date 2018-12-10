@@ -8,6 +8,9 @@ class User < ApplicationRecord
   # (delegate :github_token, to: :github_account)  if self.github_account
   # ^^^ fails if there's no github record
 
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships, source: :friend
+
 
   validates :email, uniqueness: true, presence: true
   validates_presence_of :first_name
