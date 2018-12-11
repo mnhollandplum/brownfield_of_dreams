@@ -7,14 +7,12 @@ feature 'OmniAuth Signup' do
    stub_user_repo_api_requests
    stub_user_followers_api_requests
    stub_user_following_api_requests
-   stub_omniauth
 
-   user = create(:user, email: 'test@mail.com')
-   visit login_path
-   fill_in 'session[email]', with: user.email
-   fill_in 'session[password]', with: user.password
+   user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
 
-   click_on 'Log In'
+   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
+
+   visit dashboard_path
 
    expect(current_path).to eq dashboard_path
    expect(page).to have_link('Connect to Github')
@@ -22,7 +20,6 @@ feature 'OmniAuth Signup' do
    click_on 'Connect to Github'
 
    expect(current_path).to eq(dashboard_path)
-
 
    expect(page).to have_content('Repositories')
    expect(page).to have_content('Following')
