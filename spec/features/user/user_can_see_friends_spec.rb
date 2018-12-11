@@ -38,6 +38,7 @@ describe 'Friends' do
     section = page.find(".friends")
     friends = section.find_all("li")
     expect(friends.count).to eq(0)
+    expect(section).to have_content("Link accounts to find friends.")
   end
 
 end
