@@ -4,6 +4,7 @@ RSpec.describe User, type: :model do
   describe 'validations' do
     it { should validate_presence_of :email }
     it { should validate_presence_of :first_name }
+    it { should validate_presence_of :last_name }
     it { should validate_presence_of :password }
   end
 
@@ -19,7 +20,7 @@ RSpec.describe User, type: :model do
 
   describe 'roles' do
     it 'can be created as default user' do
-      user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+      user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', last_name:'Last1', role: 0)
       expect(user.role).to eq('default')
       expect(user.default?).to be_truthy
     end
@@ -34,7 +35,7 @@ RSpec.describe User, type: :model do
   describe "Github delegated methods" do
 
     before(:each) do
-      @user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', role: 0)
+      @user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', last_name:'Last1', role: 0)
       @github = Github.create(user: @user, username: 'username', token: "faketoken123", u_id: "123")
     end
 
@@ -54,9 +55,9 @@ RSpec.describe User, type: :model do
   describe "Friendships" do
 
     before(:each) do
-      @user    = User.create(email: 'user@email.com',    password: 'password', first_name:'Jim',  role: 0)
-      @friend1 = User.create(email: 'friend1@email.com', password: 'password', first_name:'friend1', role: 0)
-      @friend2 = User.create(email: 'friend2@email.com', password: 'password', first_name:'friend2', role: 0)
+      @user    = User.create(email: 'user@email.com',    password: 'password', first_name:'Jim',     last_name: 'Last1', role: 0)
+      @friend1 = User.create(email: 'friend1@email.com', password: 'password', first_name:'friend1', last_name: 'Last2', role: 0)
+      @friend2 = User.create(email: 'friend2@email.com', password: 'password', first_name:'friend2', last_name: 'Last3', role: 0)
     end
 
 

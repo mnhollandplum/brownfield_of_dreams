@@ -3,7 +3,7 @@ require "rails_helper"
 describe 'Friends' do
 
   before(:each) do
-    @user    = User.create!(email: 'user@email.com',    password: 'password', first_name:'Jim',  role: 0)
+    @user    = User.create!(email: 'user@email.com',    password: 'password', first_name: 'Jim', last_name: "user1",  role: 0)
 
     @friend1 = User.create!(email: 'friend1@email.com', password: 'password', first_name: 'friend1', last_name: "friendly1", role: 0)
     @user.friendships.create!(friend: @friend1)
@@ -25,8 +25,9 @@ describe 'Friends' do
     section = page.find(".friends")
     friends = section.find_all("li")
     expect(friends.count).to eq(2)
-    expect(friends.first).to have_content("#{@friend1.first_name} #{@friend1.last_name}")
-    expect(friends.last).to  have_content("#{@friend2.first_name} #{@friend2.last_name}")
+    expect(friends.first).to     have_content("#{@friend1.first_name} #{@friend1.last_name}")
+    expect(friends.last).to      have_content("#{@friend2.first_name} #{@friend2.last_name}")
+    expect(friends.last).to_not  have_content("#{@not_friend.first_name} #{@not_friend.last_name}")
   end
 
   it 'Indicates if the user has no friends' do
