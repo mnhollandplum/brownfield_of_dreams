@@ -11,10 +11,15 @@
     <h1>Bookmarked Segments</h1>
   </section>
 
+  <<section>
+    <h1>Friends</h1>
+      <section class='friends'><%= render partial: 'partials/friends' %></section>
+  </section>
+
   <section>
     <h1>Github</h1>
     <% if @dashboard_facade.github_user%>
-      <section><%= render partial: 'partials/github_repos' %></section>
+      <section><%= render partial: 'partials/github_repos'     %></section>
       <section><%= render partial: 'partials/github_followers' %></section>
       <section><%= render partial: 'partials/github_following' %></section>
     <% else %>

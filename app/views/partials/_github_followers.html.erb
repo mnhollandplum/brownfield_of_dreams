@@ -3,8 +3,10 @@
   <%= "No followers" if @dashboard_facade.list_followers.count == 0 %>
   <% @dashboard_facade.list_followers.each do |follower| %>
     <ul>
-      <li> <%=link_to "#{follower.login}", follower.url, method: :get%> </li>
+      <li> <%=link_to "#{follower.login}", follower.url, method: :get%>
+        <%= render partial: 'partials/add_github_friend', locals: {potential: follower} %>
+      </li>
+
     </ul>
   <%end%>
 </div>
- 

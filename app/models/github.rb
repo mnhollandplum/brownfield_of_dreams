@@ -1,5 +1,5 @@
 class Github < ApplicationRecord
-  validates_presence_of :u_id
+  validates :u_id, presence: true, uniqueness: true
   validates_presence_of :username
   validates_presence_of :token
 
