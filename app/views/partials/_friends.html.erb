@@ -1,0 +1,9 @@
+<% if current_user.friends.empty? %>
+  Link accounts to find friends.
+<% else %>
+  <ul>
+    <% current_user.friends.each do |friend| %>
+      <li><%= "#{friend.first_name} #{friend.last_name}" %></li>
+    <% end %>
+  </ul>
+<% end %>
