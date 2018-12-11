@@ -1,14 +1,14 @@
-<!-- < % if current_user.friends.include?(potential) %> -->
 <% member = potential.is_member %>
-<!-- < % binding.pry %> -->
-
 <% if member %>
-  <% if current_user.friends.includes(member.user) %>
+  <p>
+    <!-- < % if current_user.friends.includes(member.user) %> -->
+    <% if current_user.friends.include?(member.user) %>
     <!-- < %= link_to "Remove Friend", remove_friend_path(friend: member.user), :method => :delete %> -->
     You are friends
   <% else %>
-    <%= button_to "Add as Friend", add_friend_path(friend: member.user) %>
+    <%= link_to "Add as Friend", add_friend_path(friend: member.user), class: "add-friend" %>
   <% end %>
+  </p>
 <% else %>
   <%# nothing %>
 <% end %>
