@@ -21,7 +21,6 @@ describe 'Github Friends' do
     stub_user_following_api_requests
   end
 
-
   it "Add as Friend appears if a github follower is a member of our app" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit dashboard_path
@@ -54,8 +53,20 @@ describe 'Github Friends' do
     end
 
     expect(page).to have_current_path(dashboard_path)
+    expect(page).to have_content("You've friended #{current_user.friends.last.first_name}.")
     expect(page.find('.github_followers')).to have_content("You are friends")
     expect(Friendship.count).to eq(1)
+  end
+
+  it 'Refuses to add a friendship with a user that does not exist' do
+    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
+
+    skip('TODO -- GET request issue')
+
+    visit add_friend_path(friend: (User.last.id + 1) )
+
+    expect(page).to have_current_path(dashboard_path)
+    expect(page).to have_content("That user does not exist.")
   end
 
 
