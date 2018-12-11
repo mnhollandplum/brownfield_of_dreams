@@ -6,6 +6,7 @@ RSpec.describe Github, type: :model do
     it { should validate_presence_of :token }
     it { should validate_presence_of :username }
     it { should validate_presence_of :u_id }
+    it { should validate_uniqueness_of :u_id }
   end
 
   describe "Relationships" do
