@@ -7,6 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require 'rspec/rails'
 require 'vcr'
 require 'webmock/rspec'
+require 'omniauth-github'
 
 VCR.configure do |config|
   config.ignore_localhost = true
@@ -64,3 +65,43 @@ def stub_user_following_api_requests
   stub_request(:get, "https://api.github.com/user/following").
     to_return(body: File.read("./spec/fixtures/github_following_response.json"))
 end
+
+
+  OmniAuth.config.test_mode = true
+
+
+  omniauth_hash = {"provider"=>"github",
+ "uid"=>"39295701",
+ "info"=>
+  {"nickname"=>"mnhollandplum",
+   "email"=>nil,
+   "name"=>"Nikki Holland-Plum",
+   "image"=>
+    "https://avatars1.githubusercontent.com/u/39295701?v=4",
+   "urls"=>
+    {"GitHub"=>"https://github.com/mnhollandplum",
+     "Blog"=>""}},
+ "credentials"=>
+  {"token"=>"59f847d8350c1f696c6004e199eb0ff1cb090d16"}}.with_indifferent_access
+  # omniauth_hash = { 'provider' => 'github',
+  #
+  #                   'uid' => '11111',
+  #                   'info' => {
+  #                       'name' => 'test',
+  #                       'email' => 'test@email.com'
+  #                   },
+  #                   'credentials' => {
+  #                     'token' => ENV['github_user_token'],
+  #                     'username' => "test"
+  #
+  #                   }
+  #
+  #                 }.with_indifferent_access
+
+  OmniAuth.config.add_mock(:github, omniauth_hash)
+
+  # def stub_omniauth
+  #   OmniAuth.config.test_mode = true
+  #
+  #   OmniAuth.config.mock_auth[:github] = OmniAuth::AuthHash.new({"provider" => "github","credentials" => {"token" => ENV['GITHUB_TOKEN']}})
+  # end

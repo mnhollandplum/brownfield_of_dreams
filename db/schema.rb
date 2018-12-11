@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_211004) do
   end
 
   add_foreign_key "friendships", "users"
+
   add_foreign_key "githubs", "users"
   add_foreign_key "user_videos", "users"
   add_foreign_key "user_videos", "videos"
