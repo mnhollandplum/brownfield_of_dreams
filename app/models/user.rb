@@ -1,4 +1,9 @@
 class User < ApplicationRecord
+
+  attr_accessor :remember_token, :activation_token
+  before_create :create_activation_digest
+
+
   has_many :user_videos
   has_many :videos, through: :user_videos
 
@@ -25,4 +30,18 @@ class User < ApplicationRecord
     github_account.token = auth["credentials"]["token"]
     github_account.save(validate: false)
   end
+
+
+
+  private
+
+
+  def create_activation_digest
+    self.activation_token  = User.new_token
+    self.activation_digest = User.digest(activation_token)
+  end
+
+
+
+
 end
