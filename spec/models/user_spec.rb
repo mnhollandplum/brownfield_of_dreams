@@ -20,13 +20,15 @@ RSpec.describe User, type: :model do
 
   describe 'roles' do
     it 'can be created as default user' do
-      user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', last_name:'Last1', role: 0)
+      # user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', last_name:'Last1', role: 0)
+      user = create(:active_user)
       expect(user.role).to eq('default')
       expect(user.default?).to be_truthy
     end
 
     it 'can be created as an Admin user' do
-      admin = User.create(email: 'admin@email.com', password: 'admin', first_name:'Bob', role: 1)
+      # admin = User.create(email: 'admin@email.com', password: 'admin', first_name:'Bob', role: 1)
+      admin = create(:admin)
       expect(admin.role).to eq('admin')
       expect(admin.admin?).to be_truthy
     end
@@ -35,7 +37,8 @@ RSpec.describe User, type: :model do
   describe "Github delegated methods" do
 
     before(:each) do
-      @user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', last_name:'Last1', role: 0)
+      # @user = User.create(email: 'user@email.com', password: 'password', first_name:'Jim', last_name:'Last1', role: 0)
+      @user = create(:active_user)
       @github = Github.create(user: @user, username: 'username', token: "faketoken123", u_id: "123")
     end
 
@@ -55,9 +58,12 @@ RSpec.describe User, type: :model do
   describe "Friendships" do
 
     before(:each) do
-      @user    = User.create(email: 'user@email.com',    password: 'password', first_name:'Jim',     last_name: 'Last1', role: 0)
-      @friend1 = User.create(email: 'friend1@email.com', password: 'password', first_name:'friend1', last_name: 'Last2', role: 0)
-      @friend2 = User.create(email: 'friend2@email.com', password: 'password', first_name:'friend2', last_name: 'Last3', role: 0)
+      # @user    = User.create(email: 'user@email.com',    password: 'password', first_name:'Jim',     last_name: 'Last1', role: 0)
+      @user    = create(:active_user)
+      # @friend1 = User.create(email: 'friend1@email.com', password: 'password', first_name:'friend1', last_name: 'Last2', role: 0)
+      @friend1 = create(:active_user)
+      # @friend2 = User.create(email: 'friend2@email.com', password: 'password', first_name:'friend2', last_name: 'Last3', role: 0)
+      @friend2 = create(:active_user)
     end
 
 

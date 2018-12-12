@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'User' do
   it 'user can sign in' do
-    user = create(:user)
+    user = create(:user, activated: 1)
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests
@@ -25,7 +25,7 @@ describe 'User' do
   end
 
   it 'can log out', :js do
-    user = create(:user)
+    user = create(:user, activated: 1)
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests
@@ -50,7 +50,7 @@ describe 'User' do
   end
 
   it 'is shown an error when incorrect info is entered' do
-    user = create(:user)
+    user = create(:user, activated: 1)
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests

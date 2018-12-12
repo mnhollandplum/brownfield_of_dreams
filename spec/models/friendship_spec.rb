@@ -10,8 +10,10 @@ RSpec.describe Friendship, type: :model do
   describe "can return user and friend objects" do
 
     before(:each) do
-      @user    = User.create(email: 'user@email.com',    password: 'password', first_name:'Jim',  role: 0)
-      @friend1 = User.create(email: 'friend1@email.com', password: 'password', first_name:'friend1', role: 0)
+      # @user    = User.create(email: 'user@email.com',    password: 'password', first_name:'Jim',  role: 0)
+      @user    = create(:active_user)
+      # @friend1 = User.create(email: 'friend1@email.com', password: 'password', first_name:'friend1', role: 0)
+      @friend1 = create(:active_user)
       @friendship = Friendship.create(user: @user, friend: @friend1)
     end
 

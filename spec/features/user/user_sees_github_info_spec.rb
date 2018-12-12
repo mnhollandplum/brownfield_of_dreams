@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User' do
-  
+
   describe 'Github User' do
     before(:each) do
       stub_user_repo_api_requests
@@ -10,7 +10,7 @@ describe 'User' do
     end
 
     it 'user can see github information in' do
-      user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
+      user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password", activated: 1)
       github = Github.create!(user: user, username: "username", u_id: "123", token: ENV["github_user_token"])
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
@@ -32,7 +32,7 @@ describe 'User' do
   describe 'Non-Github User' do
 
     it 'does not see the "Github" section if the user is missing a Github token' do
-      no_github = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
+      no_github = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password", activated: 1)
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(no_github)
 

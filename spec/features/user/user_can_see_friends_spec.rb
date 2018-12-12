@@ -3,15 +3,15 @@ require "rails_helper"
 describe 'Friends' do
 
   before(:each) do
-    @user    = User.create!(email: 'user@email.com',    password: 'password', first_name: 'Jim', last_name: "user1",  role: 0)
+    @user    = User.create!(email: 'user@email.com',    password: 'password', first_name: 'Jim', last_name: "user1",  role: 0, activated: 1)
 
-    @friend1 = User.create!(email: 'friend1@email.com', password: 'password', first_name: 'friend1', last_name: "friendly1", role: 0)
+    @friend1 = User.create!(email: 'friend1@email.com', password: 'password', first_name: 'friend1', last_name: "friendly1", role: 0, activated: 1)
     @user.friendships.create!(friend: @friend1)
 
-    @friend2 = User.create!(email: 'friend2@email.com', password: 'password', first_name: 'friend2', last_name: "friendly2", role: 0)
+    @friend2 = User.create!(email: 'friend2@email.com', password: 'password', first_name: 'friend2', last_name: "friendly2", role: 0, activated: 1)
     @user.friendships.create!(friend: @friend2)
 
-    @not_friend = User.create!(email: 'not_friend@email.com', password: 'password', first_name: 'not-friend', last_name: "meanie", role: 0)
+    @not_friend = User.create!(email: 'not_friend@email.com', password: 'password', first_name: 'not-friend', last_name: "meanie", role: 0, activated: 1)
 
     stub_user_repo_api_requests
     stub_user_followers_api_requests

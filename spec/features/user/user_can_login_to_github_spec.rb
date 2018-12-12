@@ -8,7 +8,7 @@ feature 'OmniAuth Signup' do
    stub_user_followers_api_requests
    stub_user_following_api_requests
 
-   user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
+   user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password", activated: 1)
 
    allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

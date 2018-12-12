@@ -21,7 +21,7 @@ class User < ApplicationRecord
   validates_presence_of :last_name
 
   enum role:  [:default, :admin]
-  enum activated: [:default, :active]
+  enum activated: [:pending, :active]
 
   def github_connect(auth)
     github_account = Github.new

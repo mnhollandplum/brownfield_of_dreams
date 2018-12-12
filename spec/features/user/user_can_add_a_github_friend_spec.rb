@@ -3,15 +3,15 @@ require "rails_helper"
 describe 'Github Friends' do
 
   before(:each) do
-    @user    = User.create!(email: 'user@email.com',    password: 'password', first_name: 'Jim', last_name: "last1",  role: 0)
+    @user    = User.create!(email: 'user@email.com',    password: 'password', first_name: 'Jim', last_name: "last1",  role: 0, activated: 1)
     @github  = Github.create!(user: @user, username: "user", token: "fake123", u_id: "123")
 
     # -- Follower via stub --
-    @friend1 = User.create!(email: 'friend1@email.com', password: 'password', first_name: 'andrewetobin', last_name: "last2", role: 0)
+    @friend1 = User.create!(email: 'friend1@email.com', password: 'password', first_name: 'andrewetobin', last_name: "last2", role: 0, activated: 1)
     @github1 = Github.create!(user: @friend1, username: "andrewetobin", token: "fake456", u_id: "37811063")
 
     # -- Following via stub --
-    @friend2 = User.create!(email: 'friend2@email.com', password: 'password', first_name: 'iandouglas', last_name: "last3", role: 0)
+    @friend2 = User.create!(email: 'friend2@email.com', password: 'password', first_name: 'iandouglas', last_name: "last3", role: 0, activated: 1)
     @github2 = Github.create!(user: @friend2, username: "iandouglas", token: "fake456", u_id: "168030")
 
     Friendship.all.destroy_all
