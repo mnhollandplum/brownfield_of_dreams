@@ -85,6 +85,7 @@ ActiveRecord::Schema.define(version: 2018_12_12_031117) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "activated", default: 0
+    t.string "activation_digest"
     t.index ["email"], name: "index_users_on_email"
   end
 
