@@ -35,12 +35,10 @@ class User < ApplicationRecord
 
   private
 
-  # def User.new_token
   def self.new_token
     SecureRandom.urlsafe_base64
   end
 
-  # def User.digest(string)
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
