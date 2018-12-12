@@ -10,10 +10,13 @@ class User < ApplicationRecord
 
   validates :email, uniqueness: true, presence: true
   validates_presence_of :password
+  has_secure_password
+
   validates_presence_of :first_name
   validates_presence_of :last_name
-  enum role: [:default, :admin]
-  has_secure_password
+
+  enum role:  [:default, :admin]
+  enum activated: [:default, :active]
 
   def github_connect(auth)
     github_account = Github.new
