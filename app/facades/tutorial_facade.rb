@@ -1,14 +1,16 @@
+
 class TutorialFacade < SimpleDelegator
+
   def initialize(tutorial, video_id = nil)
     super(tutorial)
     @video_id = video_id
   end
 
   def current_video
-    if @video_id
-      videos.find(@video_id)
+    if videos
+      return @video_id ?  videos.find(@video_id) : videos.first
     else
-      videos.first
+      return nil
     end
   end
 
@@ -29,4 +31,5 @@ class TutorialFacade < SimpleDelegator
   def maximum_video_position
     videos.max_by { |video| video.position }.position
   end
+
 end
