@@ -26,6 +26,5 @@ class User < ApplicationRecord
   def bookmarked_videos
     self.videos
     .order('videos.tutorial_id asc')
-    .select(:title, :tutorial_id)
   end
 end

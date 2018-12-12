@@ -90,5 +90,17 @@ RSpec.describe User, type: :model do
 
   end
 
+  describe "Instance Methods" do
+    it "can organize bookmarked videos of current user" do
+    user = create(:user)
+    video = create(:video)
+    user_video = create(:user_video, user_id: user.id, video_id: video.id)
+
+    expect(user.videos.count).to eq(1)
+    expect(user.bookmarked_videos.first).to eq(video)
+
+    end
+  end
+
 
 end
