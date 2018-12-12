@@ -24,9 +24,8 @@ class User < ApplicationRecord
   end
 
   def bookmarked_videos
-    UserVideo.where(user_id: self.id)
-    .joins(:video)
+    self.videos
     .order('videos.tutorial_id asc')
-    .pluck(:title, :tutorial_id)
+    .select(:title, :tutorial_id)
   end
 end
