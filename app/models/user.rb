@@ -22,4 +22,9 @@ class User < ApplicationRecord
     github_account.token = auth["credentials"]["token"]
     github_account.save(validate: false)
   end
+
+  def bookmarked_videos
+    self.videos
+    .order('videos.tutorial_id asc')
+  end
 end

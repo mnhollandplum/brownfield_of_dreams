@@ -9,9 +9,18 @@
   </ul>
   <section>
     <h1>Bookmarked Segments</h1>
+
+<% if current_user.videos %>
+     <% current_user.bookmarked_videos.each do |video| %>
+      <ul>
+       <li> <%=link_to video[:title], tutorial_path("#{video[:tutorial_id]}") %> </li>
+      </ul>
+     <% end %>
+   <% end %>
+
   </section>
 
-  <<section>
+  <section>
     <h1>Friends</h1>
       <section class='friends'><%= render partial: 'partials/friends' %></section>
   </section>
