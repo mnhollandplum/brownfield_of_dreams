@@ -22,4 +22,11 @@ class User < ApplicationRecord
     github_account.token = auth["credentials"]["token"]
     github_account.save(validate: false)
   end
+
+  def bookmarked_videos
+    UserVideo.where(user_id: self.id)
+    .joins(:video)
+    .order('videos.tutorial_id asc')
+    .pluck(:title, :tutorial_id)
+  end
 end
