@@ -11,7 +11,7 @@ describe 'Github Friends' do
     @github1 = Github.create!(user: @friend1, username: "andrewetobin", token: "fake456", u_id: "37811063")
 
     # -- Following via stub --
-    @friend2 = User.create!(email: 'friend2@email.com', password: 'password', first_name: 'iandouglas', last_name: "last3", role: 0)
+    @friend2 = User.create!(email: 'ian.douglas@iandouglas.com', password: 'password', first_name: 'iandouglas', last_name: "last3", role: 0)
     @github2 = Github.create!(user: @friend2, username: "iandouglas", token: "fake456", u_id: "168030")
 
     Friendship.all.destroy_all
@@ -19,6 +19,7 @@ describe 'Github Friends' do
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests
+    stub_user_email_api_requests
 
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@user)
     visit dashboard_path

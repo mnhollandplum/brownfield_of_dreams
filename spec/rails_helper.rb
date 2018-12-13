@@ -66,6 +66,11 @@ def stub_user_following_api_requests
     to_return(body: File.read("./spec/fixtures/github_following_response.json"))
 end
 
+def stub_user_email_requests
+  stub_request(:get, "https://api.github.com/users/iandouglas").
+    to_return(body: File.read("./spec/fixtures/github_user_email_response.json"))
+end
+
 
   OmniAuth.config.test_mode = true
 

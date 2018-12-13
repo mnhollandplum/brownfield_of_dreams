@@ -17,17 +17,24 @@ class GithubUserFacade
 
   def make_followers
     @followers ||= get_followers.map do |follower|
-      GithubPublicUser.new(follower)
+      user = GithubPublicUser.new(follower)
+      user.add_email(collect_email(user.username))
+      # we need to stub data for all followers/following for emails
     end
   end
 
   def make_following
     @followings ||= get_following.map do |following|
-      GithubPublicUser.new(following)
+      user.add_email(collect_email(user.username))
     end
   end
 
+
   private
+
+  def collect_email(username)
+    get_email(username)[:email]
+  end
 
   def get_repos
     request = { target: :repos}
@@ -47,6 +54,11 @@ class GithubUserFacade
     GithubService.new(request).target_data
   end
 
+  def get_email(username)
+    request = {targer: :one_user, user: username }
+    request[:token] = @token
+    GithubService.new(request).target_data
+  end
 
 
 

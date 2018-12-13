@@ -6,6 +6,8 @@ describe 'User' do
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests
+    stub_user_email_api_requests
+
 
     visit '/'
 
@@ -29,6 +31,8 @@ describe 'User' do
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests
+    stub_user_email_api_requests
+
 
 
     visit login_path
@@ -54,6 +58,8 @@ describe 'User' do
     stub_user_repo_api_requests
     stub_user_followers_api_requests
     stub_user_following_api_requests
+    stub_user_email_api_requests
+
 
     fake_email = "email@email.com"
     fake_password = "123"

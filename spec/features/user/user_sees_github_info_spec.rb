@@ -1,12 +1,13 @@
 require 'rails_helper'
 
 describe 'User' do
-  
+
   describe 'Github User' do
     before(:each) do
       stub_user_repo_api_requests
       stub_user_followers_api_requests
       stub_user_following_api_requests
+      stub_user_email_api_requests
     end
 
     it 'user can see github information in' do

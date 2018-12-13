@@ -32,7 +32,8 @@ class GithubService
     {
       repos:     "user/repos",
       followers: "user/followers",
-      following: "/user/following"
+      following: "/user/following",
+      one_user:  "/users/#{@filter[:username]}"
     }
   end
 end

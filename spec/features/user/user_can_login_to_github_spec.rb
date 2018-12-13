@@ -7,6 +7,8 @@ feature 'OmniAuth Signup' do
    stub_user_repo_api_requests
    stub_user_followers_api_requests
    stub_user_following_api_requests
+   stub_user_email_api_requests
+
 
    user   = User.create!(email: "user@mail.com", first_name: "test", last_name: "user", password: "password")
 

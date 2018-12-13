@@ -17,6 +17,19 @@ class GithubPublicUser
 
   end
 
+  def username
+    @filter[:login]
+  end
+
+  def add_email(email)
+    @email = email
+  end
+
+  def email
+    @email 
+  end
+
+
   def is_member
     member = Github.find_by_u_id( @filter[:id] )
     # !!member

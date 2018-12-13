@@ -20,7 +20,9 @@ class User < ApplicationRecord
     github_account.user = self
     github_account.u_id = auth["uid"]
     github_account.token = auth["credentials"]["token"]
-    github_account.save(validate: false)
+    github_account.username = auth["info"]["nickname"]
+    # github_account.save(validate: false)
+    github_account.save
   end
 
   def bookmarked_videos
