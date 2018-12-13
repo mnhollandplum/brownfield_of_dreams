@@ -18,7 +18,6 @@ describe 'User' do
     expect(page).to have_current_path(invite_path)
   end
 
-  # it 'dashboard has a link to invite a user' do
   it 'can invite a github user' do
     stub_github_public_user_api_requests
 
