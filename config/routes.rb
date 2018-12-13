@@ -52,6 +52,5 @@ Rails.application.routes.draw do
 
   resources :user_videos, only:[:create, :destroy]
 
-  get '/activate', to: "activation#edit", as: "activate"
-
+  resources :account_activations, only: [:edit]
 end
