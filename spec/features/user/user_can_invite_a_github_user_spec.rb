@@ -27,9 +27,6 @@ describe 'User' do
 
     expect(page).to have_current_path(dashboard_path)
     expect(page).to have_content( "Successfully sent invite!" )
-
-    # binding.pry
-
   end
 
   it 'cannot invite a github user that does not exist' do
@@ -39,6 +36,7 @@ describe 'User' do
     fill_in "Github Handle", with: username
     click_on "Send Invite"
     notice = "The Github user you selected doesn't have an email address associated with their account."
+
     expect(page).to have_current_path(dashboard_path)
     expect(page).to have_content( notice )
   end
@@ -50,6 +48,7 @@ describe 'User' do
     fill_in "Github Handle", with: username
     click_on "Send Invite"
     notice = "The Github user you selected doesn't have an email address associated with their account."
+
     expect(page).to have_current_path(dashboard_path)
     expect(page).to have_content( notice )
   end
