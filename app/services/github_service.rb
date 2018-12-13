@@ -8,8 +8,6 @@ class GithubService
     get_json(target)
   end
 
-
-
   private
 
   def get_json(url)
@@ -32,7 +30,8 @@ class GithubService
     {
       repos:     "user/repos",
       followers: "user/followers",
-      following: "/user/following"
+      following: "/user/following",
+      one_user:  "/users/#{@filter[:username]}"
     }
   end
 end

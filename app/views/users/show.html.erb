@@ -8,12 +8,12 @@
     <li> <%= current_user.email%> </li>
   </ul>
   <section>
-    <h1>Bookmarked Segments</h1>
 
-<% if current_user.videos %>
+  <h1>Bookmarked Segments</h1>
+  <% if current_user.videos %>
      <% current_user.bookmarked_videos.each do |video| %>
       <ul>
-       <li> <%=link_to video[:title], tutorial_path("#{video[:tutorial_id]}") %> </li>
+       <li> <%= link_to video[:title], tutorial_path("#{video[:tutorial_id]}") %> </li>
       </ul>
      <% end %>
    <% end %>
@@ -22,6 +22,7 @@
 
   <section>
     <h1>Friends</h1>
+      <%= link_to "Send Invite", invite_path %>
       <section class='friends'><%= render partial: 'partials/friends' %></section>
   </section>
 
