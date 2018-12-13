@@ -1,5 +1,8 @@
 require "rails_helper"
 
+require './app/models/poros/invite'
+
+
 RSpec.describe InviteMailer, type: :mailer do
 
   describe "Invite a Github user" do
@@ -27,15 +30,18 @@ RSpec.describe InviteMailer, type: :mailer do
       assert_equal [@email],  @mailer.to
       assert_equal [@sender], @mailer.from
 
-      subject  = "#{@inviter} has invited you to join!"
+      subject  = "#{@inviter} has invited you to join #{@app_name}!"
       greeting = "Hello #{@username}"
-      link     = CGI.escape(@link)
+      link     = @link
       message  = "#{@inviter} has invited you to join #{@app_name}. You can create an account here."
 
       assert_equal subject,   @mailer.subject
       assert_match greeting,  @mailer.body.encoded
       assert_match message,   @mailer.body.encoded
       assert_match link,      @mailer.body.encoded
+      assert_match "here",    @mailer.body.encoded
+
+
     end
   end
 
