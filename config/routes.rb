@@ -48,4 +48,7 @@ Rails.application.routes.draw do
   end
 
   resources :user_videos, only:[:create, :destroy]
+
+  resources :account_activations, only: [:edit]
+
 end
