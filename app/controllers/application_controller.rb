@@ -14,7 +14,6 @@ class ApplicationController < ActionController::Base
     if user && user.authenticated?(:remember, cookies[:remember_token])
      # log_in user
      @current_user = user
-     binding.pry
     end
   end
     # @current_user ||= User.find(session[:user_id]) if session[:user_id]
