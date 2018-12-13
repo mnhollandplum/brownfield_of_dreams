@@ -26,6 +26,9 @@ Rails.application.routes.draw do
 
   get '/auth/github/callback', to: "github#create", as: "github_callback"
 
+  get  '/invite',      to: 'invite#new',    as: 'invite'
+  post '/send_invite', to: 'invite#create', as: 'send_invite'
+
   post   '/add_friend',    to: 'friendships#create',  as: "add_friend"
   # delete '/remove_friend', to: 'friendships#destroy', as: "remove_friend"
 
