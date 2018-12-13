@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/register', to: 'users#new'
 
   resources :account_activation, only: [:edit]
+  # resources :account_activation, only: [:update]
 
   namespace :admin do
     get "/dashboard", to: "dashboard#show"
