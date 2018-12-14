@@ -96,14 +96,6 @@ RSpec.describe User, type: :model do
 
     expect(user.videos.count).to eq(1)
     expect(user.bookmarked_videos.first).to eq(video)
-
-    end
-
-    it "test user is not authenticated" do
-      user = create(:user)
-      refute user.authenticated?(:remember, '')
     end
   end
-
-
 end
