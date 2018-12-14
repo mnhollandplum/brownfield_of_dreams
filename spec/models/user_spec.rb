@@ -89,6 +89,7 @@ RSpec.describe User, type: :model do
   end
 
   describe "Instance Methods" do
+
     it "can organize bookmarked videos of current user" do
     user = create(:user)
     video = create(:video)
@@ -96,14 +97,6 @@ RSpec.describe User, type: :model do
 
     expect(user.videos.count).to eq(1)
     expect(user.bookmarked_videos.first).to eq(video)
-
-    end
-
-    it "test user is not authenticated" do
-      user = create(:user)
-      refute user.authenticated?(:remember, '')
     end
   end
-
-
 end
