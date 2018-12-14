@@ -35,7 +35,7 @@ describe 'Activation email' do
 		expect(page).to have_content("Please check your email to activate your account")
 	end
 
-	it "account is activated via email link" do
+	it "account is shows not activated" do
     email = 'jimbob@aol.com'
     first_name = 'Jim'
     last_name = 'Bob'
@@ -66,10 +66,12 @@ describe 'Activation email' do
     expect(current_path).to eq(dashboard_path)
 
 		visit edit_account_activation_path(:id => User.last.id)
+    user = User.last
+    user.activate
 
     visit dashboard_path
-    
+
+		expect(page).to_not have_content("This account has not yet been activated.")
 		expect(page).to have_content("Status: Active")
-		expect(page).to_not have_content("This account has not yet been activated. Please check your email.")
 	end
 end

@@ -1,7 +1,5 @@
 class ApplicationController < ActionController::Base
   helper_method :current_user
-  helper_method :find_bookmark
-  helper_method :list_tags
   helper_method :tutorial_name
 
   add_flash_types :success

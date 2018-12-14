@@ -10,14 +10,14 @@ class UsersController < ApplicationController
 
   def create
     hash = {:activation_token => User.new_token}
-    user = User.create!(user_params.merge(hash))
+    user = User.create(user_params.merge(hash))
     if user.save
       session[:user_id] = user.id
       UserMailer.account_activation(user).deliver_now
       flash[:info] = "Please check your email to activate your account."
       redirect_to dashboard_path
     else
-      flash[:error] = 'Username already exists'
+      # flash[:error] = 'Username already exists'
       render :new
     end
   end

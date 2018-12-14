@@ -6,9 +6,9 @@ class Admin::TutorialsController < Admin::BaseController
   def create
   end
 
-  def new
-    @tutorial = Tutorial.new
-  end
+  # def new
+  #   @tutorial = Tutorial.new
+  # end
 
   def update
     tutorial = Tutorial.find(params[:id])
