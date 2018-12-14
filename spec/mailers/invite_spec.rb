@@ -40,8 +40,6 @@ RSpec.describe InviteMailer, type: :mailer do
       assert_match message,   @mailer.body.encoded
       assert_match link,      @mailer.body.encoded
       assert_match "here",    @mailer.body.encoded
-
-
     end
   end
 
