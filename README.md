@@ -32,7 +32,7 @@ Additional functionality to be implemented: https://github.com/mnhollandplum/bro
 
 ## Local Setup
 
-First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`. There will be one failing spec if you don't have this set up.
+First you'll need to setup an API key with YouTube and have it defined within `ENV['YOUTUBE_API_KEY']`, an API key with Github and have it defined within `ENV['GITHUB_API_KEY']`, and an API key with SendGrid and have it defined within `ENV['SENDGRID_USER_NAME']` and `ENV['SENDGRID_PASSWORD'] `.
 
 Clone down the repo
 ```
