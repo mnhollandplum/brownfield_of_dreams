@@ -13,10 +13,10 @@
   <% if current_user.videos %>
      <% current_user.bookmarked_videos.each do |video| %>
       <ul>
-       <li> <%= link_to video[:title], tutorial_path("#{video[:tutorial_id]}") %> </li>
+        <li> <%= link_to video[:title], tutorial_path("#{video[:tutorial_id]}") %> </li>
       </ul>
      <% end %>
-   <% end %>
+  <% end %>
 
   </section>
 
