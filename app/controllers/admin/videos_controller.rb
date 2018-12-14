@@ -1,4 +1,5 @@
-class Admin::VideosController < Admin::BaseController
+class Admin::VideosController < ApplicationController #Admin::BaseController
+  before_action :require_admin!
 
   def edit
     @video = Video.find( params[:id] )

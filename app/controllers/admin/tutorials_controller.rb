@@ -1,4 +1,6 @@
-class Admin::TutorialsController < Admin::BaseController
+class Admin::TutorialsController < ApplicationController #Admin::BaseController
+  before_action :require_admin!
+
   def edit
     @tutorial = Tutorial.find(params[:id])
   end

@@ -1,4 +1,5 @@
-class Admin::Api::V1::TutorialSequencerController < Admin::Api::V1::BaseController
+class Admin::Api::V1::TutorialSequencerController < ApplicationController #Admin::Api::V1::BaseController
+  before_action :require_admin!
 
   def update
     tutorial = Tutorial.find(params[:tutorial_id])
