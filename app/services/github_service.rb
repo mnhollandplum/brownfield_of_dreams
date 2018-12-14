@@ -1,4 +1,5 @@
 class GithubService
+  
   def initialize(filter)
     @filter = filter
     @base_url = "https://api.github.com"
