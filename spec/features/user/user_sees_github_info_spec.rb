@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'User' do
-  
+
   describe 'Github User' do
     before(:each) do
       stub_user_repo_api_requests
@@ -41,11 +41,10 @@ describe 'User' do
   		expect(page).to have_content(no_github.first_name)
   		expect(page).to have_content(no_github.last_name)
 
+      expect(page).to     have_content("Github")
   		expect(page).to_not have_content("Repositories")
       expect(page).to_not have_content("Following")
       expect(page).to_not have_content("Followers")
-      skip("Debating if header should show before adding content")
-  		expect(page).to_not have_content("Github")
     end
   end
 end
