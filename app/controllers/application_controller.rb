@@ -31,4 +31,8 @@ class ApplicationController < ActionController::Base
     raise ActionController::RoutingError.new('Not Found')
     # render status: 404
   end
+
+  def log_in(user)
+    session[:user_id] = user.id
+  end
 end
