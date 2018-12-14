@@ -13,8 +13,7 @@ class InviteController < ApplicationController
     address  = invite.get_github_email
 
     if address
-      # Create a mailer
-
+      InviteMailer.invite_github_user(invite).deliver_now
       flash[:invite] = "Successfully sent invite!"
     else
       flash[:invite] = "The Github user you selected doesn't have an email address associated with their account."

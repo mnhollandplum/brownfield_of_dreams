@@ -52,12 +52,6 @@ describe 'User' do
     expect(page).to have_content( notice )
   end
 
-  it 'actually sent the email' do
-    expect(page).to have_content("FAILING ON PURPOSE - ADD FEATURE AFTER MERGE")
-  end
-
-
-
 end
 
 

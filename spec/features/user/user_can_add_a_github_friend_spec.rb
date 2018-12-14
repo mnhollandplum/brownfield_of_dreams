@@ -58,11 +58,9 @@ describe 'Github Friends' do
 
   it 'Refuses to add a friendship with a user that does not exist' do
     id = User.last.id + 1
-    url = "/add_friend?friend=#{id}"
+    url = add_friend_path(friend: id)
     page.driver.post(url)
-
-    skip("capybara can't post, fix later")
-
+    click_on "redirected"
     expect(page).to have_current_path(dashboard_path)
     expect(page).to have_content("That user does not exist.")
   end

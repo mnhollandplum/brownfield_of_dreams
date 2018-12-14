@@ -51,6 +51,10 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
 end
 
+
+
+# --- Github for Dashboard ---
+
 def stub_user_repo_api_requests
   stub_request(:get, "https://api.github.com/user/repos").
     to_return(body: File.read("./spec/fixtures/github_user_response.json"))
@@ -65,6 +69,9 @@ def stub_user_following_api_requests
   stub_request(:get, "https://api.github.com/user/following").
     to_return(body: File.read("./spec/fixtures/github_following_response.json"))
 end
+
+
+# --- Github Emails ---
 
 def stub_github_public_user_api_requests
   stub_request(:get, "https://api.github.com/users/iandouglas").
